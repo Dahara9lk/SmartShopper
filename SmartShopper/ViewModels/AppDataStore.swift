@@ -25,7 +25,9 @@ final class AppDataStore: ObservableObject {
     @Published private(set) var authState: AuthState = .loading
     @Published private(set) var profile: UserProfile?
     @Published private(set) var household: Household?
-    @Published private(set) var items: [ShoppingItem] = []
+    @Published private(set) var items: [ShoppingItem] = []{
+        didSet { WidgetBridge.updateList(items: items) }
+    }
     @Published private(set) var trips: [ShoppingTrip] = []
     @Published private(set) var activity: [ActivityEvent] = []
     @Published private(set) var pendingSyncCount = 0
