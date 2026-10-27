@@ -74,6 +74,12 @@ struct SmartMapView: View {
                 smartMap.refresh(items: items)
             }
         }
+        // Shopping list changed (item added, removed or ticked) -> search shops again
+        .onChange(of: items.count) { _, _ in
+            if location.isAuthorized {
+                smartMap.refresh(items: items)
+            }
+        }
     }
 
     // MARK: Map

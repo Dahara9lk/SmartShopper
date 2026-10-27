@@ -13,9 +13,9 @@
 //
 
 import Foundation
+import Combine
 import MapKit
 import SwiftUI
-import Combine
 
 @MainActor
 final class SmartMapViewModel: ObservableObject {
@@ -33,7 +33,10 @@ final class SmartMapViewModel: ObservableObject {
     @Published var selectedStore: NearbyStore?
     @Published private(set) var route: MKRoute?
     @Published private(set) var detourMinutes: Int?
-    @Published var cameraPosition: MapCameraPosition = .userLocation(fallback: .automatic)
+    /// True when Apple Maps has no driving directions for this area (e.g. Sri Lanka).
+    /// We then show a straight-line estimate instead of "Calculating..." forever.
+    @Published private(set) var routeUnavailable = false
+    @Published var cameraPosition: MapCameraPosition = .userLocation(fallback: MapDefaults.colombo)
     @Published var searchRadiusKm: Double = 5
     @Published private(set) var searchProgress: Double = 0
     @Published private(set) var searchStatus: [String: String] = [:]   // store type title -> "Matched"/"Scanning"/"Queued"
@@ -145,9 +148,14 @@ final class SmartMapViewModel: ObservableObject {
         selectedStore = store
         route = nil
         detourMinutes = nil
+        routeUnavailable = false
         guard let from = location.lastLocation?.coordinate, let mapItem = store.mapItem else { return }
         route = await search.route(from: from, to: mapItem)
-        if let destination {
+        if route == nil {
+            // No directions from Apple Maps: estimate the time from the distance (about 25 km/h in city traffic)
+            routeUnavailable = true
+            detourMinutes = max(1, Int((store.distanceMeters / 1000 / 25 * 60).rounded()))
+        } else if let destination {
             detourMinutes = await search.detourMinutes(from: from, via: mapItem, to: destination)
         } else if let route {
             // No destination set: the "detour" is just the drive there
@@ -179,7 +187,7 @@ final class SmartMapViewModel: ObservableObject {
 
     func recenter() {
         withAnimation {
-            cameraPosition = .userLocation(fallback: .automatic)
+            cameraPosition = .userLocation(fallback: MapDefaults.colombo)
         }
     }
 
@@ -191,6 +199,14 @@ final class SmartMapViewModel: ObservableObject {
     /// "+3 min detour" text
     var detourText: String {
         guard let detourMinutes else { return "Calculating..." }
+        if routeUnavailable { return "~\(detourMinutes) min (estimate)" }
         return destination == nil ? "\(detourMinutes) min drive" : "+\(detourMinutes) min detour"
     }
+}
+
+/// Where the map starts before the user's real location is known: Colombo, Sri Lanka.
+enum MapDefaults {
+    static let colombo = MapCameraPosition.region(
+        MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 6.9271, longitude: 79.8612),
+                           latitudinalMeters: 8_000, longitudinalMeters: 8_000))
 }

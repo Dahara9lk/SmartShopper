@@ -4,7 +4,7 @@
 //
 //  Figma S4: driving route to the shop with the next turn instruction.
 //  The route line, steps, distance and ETA come from MKDirections (real data).
-//  For full voice turn-by-turn the user can hand off to Apple Maps.
+//  If Apple Maps has no directions for the area, we show distance + an estimate instead.
 //
 
 import SwiftUI
@@ -16,8 +16,14 @@ struct RouteView: View {
     @EnvironmentObject private var smartMap: SmartMapViewModel
     @EnvironmentObject private var data: AppDataStore
     @Environment(\.dismiss) private var dismiss
-    @State private var position: MapCameraPosition = .userLocation(followsHeading: true, fallback: .automatic)
+    @State private var position: MapCameraPosition = .userLocation(followsHeading: true, fallback: MapDefaults.colombo)
     @State private var showInStore = false
+
+    /// Items from the CURRENT shopping list this shop can supply.
+    /// Worked out live, so it is right even if the list changed after the shop search.
+    private var itemsForThisShop: [ShoppingItem] {
+        StoreMatcher.matchedItems(for: store.type, in: data.allRemainingItems)
+    }
 
     private var route: MKRoute? {
         smartMap.selectedStore?.id == store.id ? smartMap.route : nil
@@ -44,6 +50,10 @@ struct RouteView: View {
                 if let route {
                     MapPolyline(route)
                         .stroke(Color.brandPrimary, style: StrokeStyle(lineWidth: 8, lineCap: .round))
+                } else if smartMap.routeUnavailable, let here = smartMap.location.lastLocation?.coordinate {
+                    // No road directions here - draw a dashed straight line to the shop instead
+                    MapPolyline(coordinates: [here, store.coordinate])
+                        .stroke(Color.brandPrimary, style: StrokeStyle(lineWidth: 5, lineCap: .round, dash: [8, 8]))
                 }
             }
             .mapControls {
@@ -69,9 +79,7 @@ struct RouteView: View {
         }
         .safeAreaInset(edge: .bottom) { bottomCard }
         .fullScreenCover(isPresented: $showInStore) {
-            InStoreModeView(items: store.matchedItems.filter { item in
-                data.items.contains { $0.id == item.id && !$0.isPurchased }
-            }, storeName: store.name, storeArea: store.address)
+            InStoreModeView(items: itemsForThisShop, storeName: store.name, storeArea: store.address)
         }
         .task {
             if route == nil {
@@ -94,6 +102,11 @@ struct RouteView: View {
                     Text(nextStep.instructions)
                         .font(.headline)
                         .lineLimit(2)
+                } else if route == nil && smartMap.routeUnavailable {
+                    Text("\(AppFormat.distance(store.distanceMeters)) away")
+                        .font(.title2.weight(.bold))
+                    Text("Road directions aren't available here")
+                        .font(.headline)
                 } else if route == nil {
                     Text("Calculating route...")
                         .font(.headline)
@@ -129,7 +142,7 @@ struct RouteView: View {
                 .foregroundStyle(Color.textSecondary)
 
             HStack(spacing: 10) {
-                infoChip(icon: "bag.fill", title: "Reserved", value: "\(store.matchedItems.count) list items")
+                infoChip(icon: "bag.fill", title: "Reserved", value: "\(itemsForThisShop.count) list items")
                 infoChip(icon: "square.grid.2x2.fill", title: "In-store", value: "Aisle order ready")
             }
 
@@ -138,6 +151,12 @@ struct RouteView: View {
                     Text("\(max(1, Int((route.expectedTravelTime / 60).rounded()))) min")
                         .font(.title.weight(.bold))
                     Text(AppFormat.distance(route.distance))
+                        .font(.subheadline)
+                        .foregroundStyle(Color.textSecondary)
+                } else if smartMap.routeUnavailable {
+                    Text(smartMap.detourText)
+                        .font(.title3.weight(.bold))
+                    Text(AppFormat.distance(store.distanceMeters))
                         .font(.subheadline)
                         .foregroundStyle(Color.textSecondary)
                 } else {
@@ -162,7 +181,7 @@ struct RouteView: View {
                 }
                 .accessibilityLabel("End route")
                 PrimaryButton(title: "Start In-Store Mode", trailingArrow: true,
-                              isEnabled: !store.matchedItems.isEmpty) {
+                              isEnabled: !itemsForThisShop.isEmpty) {
                     showInStore = true
                 }
             }
