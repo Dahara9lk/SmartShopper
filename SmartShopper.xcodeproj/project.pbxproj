@@ -6,13 +6,33 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0E8A82B93090AE6F00E94A7E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0E8A82B83090AE6F00E94A7E /* FirebaseAuth */; };
+		0E8A82BB3090AE6F00E94A7E /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 0E8A82BA3090AE6F00E94A7E /* FirebaseCore */; };
+		0E8A82BD3090AE6F00E94A7E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0E8A82BC3090AE6F00E94A7E /* FirebaseFirestore */; };
+		0E8A82C03090AF2300E94A7E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 0E8A82BF3090AF2300E94A7E /* GoogleSignIn */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		0E8A80CB3090511500E94A7E /* SmartShopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartShopper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		0E8A82B43090A4E000E94A7E /* Exceptions for "SmartShopper" folder in "SmartShopper" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Resources/ItemCategoryClassifier.mlmodel,
+			);
+			target = 0E8A80CA3090511500E94A7E /* SmartShopper */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		0E8A80CD3090511500E94A7E /* SmartShopper */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				0E8A82B43090A4E000E94A7E /* Exceptions for "SmartShopper" folder in "SmartShopper" target */,
+			);
 			path = SmartShopper;
 			sourceTree = "<group>";
 		};
@@ -23,6 +43,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E8A82BB3090AE6F00E94A7E /* FirebaseCore in Frameworks */,
+				0E8A82C03090AF2300E94A7E /* GoogleSignIn in Frameworks */,
+				0E8A82B93090AE6F00E94A7E /* FirebaseAuth in Frameworks */,
+				0E8A82BD3090AE6F00E94A7E /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +89,10 @@
 			);
 			name = SmartShopper;
 			packageProductDependencies = (
+				0E8A82B83090AE6F00E94A7E /* FirebaseAuth */,
+				0E8A82BA3090AE6F00E94A7E /* FirebaseCore */,
+				0E8A82BC3090AE6F00E94A7E /* FirebaseFirestore */,
+				0E8A82BF3090AF2300E94A7E /* GoogleSignIn */,
 			);
 			productName = SmartShopper;
 			productReference = 0E8A80CB3090511500E94A7E /* SmartShopper.app */;
@@ -94,6 +122,10 @@
 			);
 			mainGroup = 0E8A80C23090511500E94A7E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				0E8A82B73090AE6F00E94A7E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				0E8A82BE3090AF2200E94A7E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 0E8A80CC3090511500E94A7E /* Products */;
 			projectDirPath = "";
@@ -274,7 +306,7 @@
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				XROS_DEPLOYMENT_TARGET = 26.2;
@@ -316,7 +348,7 @@
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				XROS_DEPLOYMENT_TARGET = 26.2;
@@ -345,6 +377,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0E8A82B73090AE6F00E94A7E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.0.0;
+			};
+		};
+		0E8A82BE3090AF2200E94A7E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0E8A82B83090AE6F00E94A7E /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E8A82B73090AE6F00E94A7E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		0E8A82BA3090AE6F00E94A7E /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E8A82B73090AE6F00E94A7E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		0E8A82BC3090AE6F00E94A7E /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E8A82B73090AE6F00E94A7E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		0E8A82BF3090AF2300E94A7E /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E8A82BE3090AF2200E94A7E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0E8A80C33090511500E94A7E /* Project object */;
 }
