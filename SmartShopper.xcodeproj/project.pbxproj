@@ -13,8 +13,19 @@
 		0E8A82C03090AF2300E94A7E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 0E8A82BF3090AF2300E94A7E /* GoogleSignIn */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0E8A82C93090D51500E94A7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E8A80C33090511500E94A7E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E8A80CA3090511500E94A7E;
+			remoteInfo = SmartShopper;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0E8A80CB3090511500E94A7E /* SmartShopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartShopper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E8A82C53090D51400E94A7E /* SmartShopperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartShopperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -36,6 +47,11 @@
 			path = SmartShopper;
 			sourceTree = "<group>";
 		};
+		0E8A82C63090D51400E94A7E /* SmartShopperTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SmartShopperTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +66,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0E8A82C23090D51400E94A7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -57,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				0E8A80CD3090511500E94A7E /* SmartShopper */,
+				0E8A82C63090D51400E94A7E /* SmartShopperTests */,
 				0E8A80CC3090511500E94A7E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				0E8A80CB3090511500E94A7E /* SmartShopper.app */,
+				0E8A82C53090D51400E94A7E /* SmartShopperTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,6 +123,29 @@
 			productReference = 0E8A80CB3090511500E94A7E /* SmartShopper.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0E8A82C43090D51400E94A7E /* SmartShopperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E8A82CB3090D51500E94A7E /* Build configuration list for PBXNativeTarget "SmartShopperTests" */;
+			buildPhases = (
+				0E8A82C13090D51400E94A7E /* Sources */,
+				0E8A82C23090D51400E94A7E /* Frameworks */,
+				0E8A82C33090D51400E94A7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E8A82CA3090D51500E94A7E /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				0E8A82C63090D51400E94A7E /* SmartShopperTests */,
+			);
+			name = SmartShopperTests;
+			packageProductDependencies = (
+			);
+			productName = SmartShopperTests;
+			productReference = 0E8A82C53090D51400E94A7E /* SmartShopperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -110,6 +158,11 @@
 				TargetAttributes = {
 					0E8A80CA3090511500E94A7E = {
 						CreatedOnToolsVersion = 26.2;
+					};
+					0E8A82C43090D51400E94A7E = {
+						CreatedOnToolsVersion = 26.2;
+						LastSwiftMigration = 2620;
+						TestTargetID = 0E8A80CA3090511500E94A7E;
 					};
 				};
 			};
@@ -132,12 +185,20 @@
 			projectRoot = "";
 			targets = (
 				0E8A80CA3090511500E94A7E /* SmartShopper */,
+				0E8A82C43090D51400E94A7E /* SmartShopperTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		0E8A80C93090511500E94A7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E8A82C33090D51400E94A7E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -154,7 +215,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0E8A82C13090D51400E94A7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0E8A82CA3090D51500E94A7E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E8A80CA3090511500E94A7E /* SmartShopper */;
+			targetProxy = 0E8A82C93090D51500E94A7E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0E8A80D43090511600E94A7E /* Debug */ = {
@@ -361,6 +437,54 @@
 			};
 			name = Release;
 		};
+		0E8A82CC3090D51500E94A7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smartshopper.student.SmartShopperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartShopper.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SmartShopper";
+			};
+			name = Debug;
+		};
+		0E8A82CD3090D51500E94A7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smartshopper.student.SmartShopperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartShopper.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SmartShopper";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -378,6 +502,15 @@
 			buildConfigurations = (
 				0E8A80D73090511600E94A7E /* Debug */,
 				0E8A80D83090511600E94A7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E8A82CB3090D51500E94A7E /* Build configuration list for PBXNativeTarget "SmartShopperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E8A82CC3090D51500E94A7E /* Debug */,
+				0E8A82CD3090D51500E94A7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
