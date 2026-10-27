@@ -282,6 +282,9 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "SmartShopper uses Face ID to unlock your shopping lists and family shared lists.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "SmartShopper alerts you when you pass a shop that has items from your list, even when the app is closed.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "SmartShopper uses your location to find nearby shops that have items from your shopping list.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -324,6 +327,9 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "SmartShopper uses Face ID to unlock your shopping lists and family shared lists.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "SmartShopper alerts you when you pass a shop that has items from your list, even when the app is closed.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "SmartShopper uses your location to find nearby shops that have items from your shopping list.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
