@@ -71,6 +71,9 @@ struct MainTabView: View {
             .navigationSplitViewColumnWidth(min: 220, ideal: 250)
         } detail: {
             screen(for: router.selectedTab)
+                // .id makes SwiftUI rebuild the right side when the section changes.
+                // Without it the iPad split view can keep showing the old screen.
+                .id(router.selectedTab)
         }
         .tint(.brandPrimary)
     }
