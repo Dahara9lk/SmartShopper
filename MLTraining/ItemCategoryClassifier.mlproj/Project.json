@@ -1,0 +1,29 @@
+{
+  "activityEntities" : [
+    "projectCreated",
+    [
+      {
+        "createdDate" : "2026-10-28T06:29:20Z",
+        "event" : "projectCreated",
+        "id" : "5E40A12D-F24A-4454-8CB0-A989158EC80B",
+        "subtitle" : "ItemCategoryClassifier",
+        "title" : "Project Created"
+      }
+    ]
+  ],
+  "authorName" : "Dahara",
+  "createdDate" : "2026-10-28T06:29:20Z",
+  "description" : "",
+  "id" : "F44C77F6-3163-4F58-BFE6-07B86D6AADEE",
+  "license" : "",
+  "location" : "",
+  "modifiedDate" : "2026-10-28T06:29:20Z",
+  "projectName" : "ItemCategoryClassifier",
+  "settingsEntity" : {
+    "snapshotOnExtendTraining" : true,
+    "snapshotOnResumeTraining" : false
+  },
+  "taskType" : "textClassifier",
+  "title" : "Text Classification",
+  "version" : "1.1"
+}

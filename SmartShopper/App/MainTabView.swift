@@ -1,11 +1,7 @@
 //
 //  MainTabView.swift
 //  SmartShopper
-//
-//  iPhone: bottom tab bar with 5 tabs (Home, Lists, Smart Map, History, Profile).
-//  iPad:   NavigationSplitView - sidebar on the left, the chosen section on the right.
-//          (Multi-device adaptation for LO1 / Component 5.)
-//
+
 
 import SwiftUI
 

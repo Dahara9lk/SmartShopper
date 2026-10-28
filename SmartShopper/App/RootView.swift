@@ -1,12 +1,6 @@
 //
 //  RootView.swift
 //  SmartShopper
-//
-//  Decides what the user sees:
-//    loading  -> splash
-//    signed out -> Welcome / Sign In / Create Account
-//    signed in  -> the 5 tabs (with the Face ID lock on top when needed)
-//
 
 import SwiftUI
 

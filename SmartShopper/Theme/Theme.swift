@@ -38,7 +38,7 @@ extension Color {
     static let dangerSoft = Color("AppDangerSoft")
 }
 
-/// Small set of layout numbers so every screen uses the same spacing as the Figma design.
+
 enum AppLayout {
     static let screenPadding: CGFloat = 16
     static let cardPadding: CGFloat = 16
@@ -49,10 +49,10 @@ enum AppLayout {
     static let buttonHeight: CGFloat = 52
 }
 
-/// Money formatting in one place, so the currency can be changed easily.
+/// Money formatting
 enum AppFormat {
-    /// Change to "LKR" if you want Sri Lankan rupees everywhere.
-    static let currencyCode = "USD"
+    /// Change to ANY CURRENCY
+    static let currencyCode = "LKR"
 
     static func money(_ value: Double) -> String {
         value.formatted(.currency(code: currencyCode))

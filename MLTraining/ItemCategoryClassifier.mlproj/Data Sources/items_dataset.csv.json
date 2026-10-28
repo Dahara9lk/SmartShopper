@@ -1,0 +1,110 @@
+{
+  "activityEntities" : [
+    "dataSourceMetrics",
+    [
+      {
+        "createdDate" : "2026-10-28T06:31:37Z",
+        "event" : "dataSourceMetrics",
+        "id" : "397D9FDD-6ED5-4F23-99ED-3E0AA67697DD",
+        "subtitle" : "8 Classes, 788 Items",
+        "title" : "Data Summary"
+      },
+      {
+        "createdDate" : "2026-10-28T06:35:18Z",
+        "event" : "dataSourceMetrics",
+        "id" : "C8E48E52-96DB-4687-BEBA-ABF18D22F003",
+        "subtitle" : "8 Classes, 788 Items",
+        "title" : "Data Summary"
+      }
+    ],
+    "dataSourceCreated",
+    [
+      {
+        "createdDate" : "2026-10-28T06:30:16Z",
+        "event" : "dataSourceCreated",
+        "id" : "6CB7BA62-1014-44D1-8F54-41D9402A3365",
+        "subtitle" : "items_dataset.csv",
+        "title" : "Data Source Created"
+      }
+    ],
+    "dataSourceTrainingStarted",
+    [
+      {
+        "createdDate" : "2026-10-28T06:31:37Z",
+        "event" : "dataSourceTrainingStarted",
+        "id" : "0ED49E90-7CA0-4233-BAF9-F561DDC2D621",
+        "subtitle" : "ItemCategoryClassifier 1",
+        "title" : "Used By"
+      },
+      {
+        "createdDate" : "2026-10-28T06:35:18Z",
+        "event" : "dataSourceTrainingStarted",
+        "id" : "661A9443-3D84-4B9B-BBA3-504C15B9BF3E",
+        "subtitle" : "ItemCategoryClassifier 2",
+        "title" : "Used By"
+      }
+    ]
+  ],
+  "createdDate" : "2026-10-28T06:30:16Z",
+  "dataPathRelativeToProjectURL" : "../items_dataset.csv/",
+  "dataResult" : {
+    "classesCount" : 8,
+    "createdDate" : "2026-10-28T06:30:16Z",
+    "dataAnalysis" : {
+      "classifierAnalysis" : {
+        "labelStats" : {
+          "bakery" : 74,
+          "dairy" : 74,
+          "electronics" : 88,
+          "household" : 92,
+          "pantry" : 188,
+          "personalCare" : 89,
+          "pharmacy" : 81,
+          "produce" : 102
+        }
+      },
+      "issues" : [
+        {
+          "description" : "8 classes found, including pantry, produce, household",
+          "severity" : "debug"
+        },
+        {
+          "description" : "788 texts found, automatically creating validation set",
+          "severity" : "good"
+        },
+        {
+          "description" : "Smallest class is \"bakery\" with 74 texts",
+          "severity" : "debug"
+        },
+        {
+          "description" : "Largest class is \"pantry\" with 188 text",
+          "severity" : "debug"
+        }
+      ],
+      "objectDetectorAnalysis" : {
+        "details" : {
+
+        }
+      },
+      "summary" : {
+        "canUseValidation" : 1,
+        "classCount" : 8,
+        "sampleCount" : 788
+      }
+    },
+    "dataSourceID" : "61C289BE-7CCF-46E3-B8AF-A2E3BCF994F3",
+    "dataURL" : "file:///Users/dahara/Desktop/SmartShopper/MLTraining/items_dataset.csv",
+    "itemsCount" : 788
+  },
+  "dataURL" : "file:///Users/dahara/Desktop/SmartShopper/MLTraining/items_dataset.csv",
+  "experimentIDs" : [
+    "0283FE37-057D-43DE-9DAD-10F503AB199F",
+    "1393D7B4-5840-4A89-8250-5A569DCA8EE0"
+  ],
+  "id" : "61C289BE-7CCF-46E3-B8AF-A2E3BCF994F3",
+  "modifiedDate" : "2026-10-28T06:35:18Z",
+  "pathType" : 0,
+  "preferredFilename" : "items_dataset.csv",
+  "title" : "items_dataset.csv",
+  "version" : "1.0"
+}

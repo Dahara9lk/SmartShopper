@@ -1,0 +1,789 @@
+text,label
+banana,produce
+bananas,produce
+apple,produce
+green apples,produce
+red apples,produce
+orange,produce
+oranges,produce
+mango,produce
+papaya,produce
+pineapple,produce
+watermelon,produce
+grapes,produce
+strawberries,produce
+blueberries,produce
+avocado,produce
+hass avocados,produce
+avocados 3 pcs,produce
+lemon,produce
+lime,produce
+tomato,produce
+tomatoes,produce
+cherry tomatoes,produce
+potato,produce
+potatoes,produce
+sweet potato,produce
+onion,produce
+red onion,produce
+big onions,produce
+garlic,produce
+ginger,produce
+carrot,produce
+carrots,produce
+cabbage,produce
+lettuce,produce
+spinach,produce
+baby spinach,produce
+organic spinach,produce
+kale,produce
+broccoli,produce
+cauliflower,produce
+cucumber,produce
+capsicum,produce
+bell pepper,produce
+green chilli,produce
+pumpkin,produce
+leeks,produce
+beans,produce
+green beans,produce
+okra,produce
+brinjal,produce
+eggplant,produce
+mushrooms,produce
+coriander leaves,produce
+curry leaves,produce
+mint leaves,produce
+celery,produce
+spring onion,produce
+fresh herbs,produce
+coconut,produce
+king coconut,produce
+salad mix,produce
+corn,produce
+whole milk,dairy
+whole milk 2l,dairy
+milk,dairy
+fresh milk,dairy
+organic whole milk,dairy
+skim milk,dairy
+low fat milk,dairy
+oat milk,dairy
+almond milk,dairy
+soy milk,dairy
+milk powder,dairy
+anchor milk powder,dairy
+condensed milk,dairy
+yogurt,dairy
+yoghurt,dairy
+greek yogurt,dairy
+curd,dairy
+buffalo curd,dairy
+butter,dairy
+salted butter,dairy
+salted cream butter,dairy
+cheese,dairy
+cheddar cheese,dairy
+mozzarella,dairy
+cream cheese,dairy
+parmesan,dairy
+sliced cheese,dairy
+fresh cream,dairy
+whipping cream,dairy
+sour cream,dairy
+eggs,dairy
+eggs 12pk,dairy
+eggs grade a,dairy
+organic eggs,dairy
+pasture eggs,dairy
+free range eggs,dairy
+egg tray,dairy
+ice cream,dairy
+vanilla ice cream,dairy
+chocolate milk,dairy
+milkshake,dairy
+ghee,dairy
+paneer,dairy
+kefir,dairy
+custard,dairy
+bread,bakery
+sourdough bread,bakery
+sourdough loaf,bakery
+artisan sourdough loaf,bakery
+white bread,bakery
+brown bread,bakery
+whole wheat bread,bakery
+multigrain bread,bakery
+bagels,bakery
+croissant,bakery
+french croissant,bakery
+butter croissant,bakery
+baguette,bakery
+buns,bakery
+burger buns,bakery
+hot dog buns,bakery
+dinner rolls,bakery
+muffins,bakery
+blueberry muffin,bakery
+cupcakes,bakery
+cake,bakery
+chocolate cake,bakery
+birthday cake,bakery
+donuts,bakery
+doughnut,bakery
+brioche,bakery
+rosemary brioche,bakery
+pita bread,bakery
+naan,bakery
+tortillas,bakery
+wraps,bakery
+cookies,bakery
+pastry,bakery
+danish pastry,bakery
+fish bun,bakery
+roast bread,bakery
+tea bun,bakery
+cinnamon roll,bakery
+banana bread,bakery
+garlic bread,bakery
+pizza base,bakery
+rusks,bakery
+rice,pantry
+brown rice,pantry
+basmati rice,pantry
+red rice,pantry
+samba rice,pantry
+nadu rice,pantry
+pasta,pantry
+spaghetti,pantry
+penne,pantry
+noodles,pantry
+instant noodles,pantry
+flour,pantry
+wheat flour,pantry
+sugar,pantry
+brown sugar,pantry
+salt,pantry
+black pepper,pantry
+chilli powder,pantry
+curry powder,pantry
+turmeric,pantry
+cinnamon,pantry
+olive oil,pantry
+olive oil 1l,pantry
+coconut oil,pantry
+vegetable oil,pantry
+sunflower oil,pantry
+vinegar,pantry
+soy sauce,pantry
+tomato sauce,pantry
+ketchup,pantry
+mayonnaise,pantry
+mustard,pantry
+honey,pantry
+jam,pantry
+peanut butter,pantry
+almond butter,pantry
+nutella,pantry
+cereal,pantry
+corn flakes,pantry
+oats,pantry
+rolled oats,pantry
+muesli,pantry
+granola,pantry
+chia seeds,pantry
+lentils,pantry
+dhal,pantry
+red lentils,pantry
+chickpeas,pantry
+canned beans,pantry
+canned tuna,pantry
+tuna can,pantry
+sardines,pantry
+coconut milk,pantry
+coconut milk powder,pantry
+tea,pantry
+tea bags,pantry
+ceylon tea,pantry
+coffee,pantry
+ground coffee,pantry
+ground coffee beans,pantry
+instant coffee,pantry
+milo,pantry
+biscuits,pantry
+crackers,pantry
+chips,pantry
+potato chips,pantry
+popcorn,pantry
+chocolate,pantry
+dark chocolate,pantry
+fair trade dark chocolate,pantry
+nuts,pantry
+cashew nuts,pantry
+almonds,pantry
+raisins,pantry
+dates,pantry
+sparkling water,pantry
+sparkling water 12pk,pantry
+bottled water,pantry
+soft drinks,pantry
+orange juice,pantry
+apple juice,pantry
+cordial,pantry
+chicken,pantry
+chicken breast,pantry
+minced beef,pantry
+fish,pantry
+prawns,pantry
+sausages,pantry
+frozen peas,pantry
+frozen chips,pantry
+papadam,pantry
+soya meat,pantry
+dish soap,household
+dishwashing liquid,household
+sunlight soap,household
+laundry detergent,household
+washing powder,household
+fabric softener,household
+bleach,household
+floor cleaner,household
+surface cleaner,household
+glass cleaner,household
+toilet cleaner,household
+toilet paper,household
+toilet rolls,household
+paper towels,household
+kitchen towels,household
+tissues,household
+napkins,household
+garbage bags,household
+trash bags,household
+bin liners,household
+aluminium foil,household
+cling wrap,household
+baking paper,household
+zip lock bags,household
+sponges,household
+scrub pad,household
+steel wool,household
+mop,household
+broom,household
+dustpan,household
+air freshener,household
+mosquito coil,household
+insect spray,household
+candles,household
+matches,household
+light bulb,household
+led bulb,household
+batteries,household
+aa batteries,household
+aa lithium batteries 8 pk,household
+aaa batteries,household
+rubber gloves,household
+clothes pegs,household
+hangers,household
+storage box,household
+plastic containers,household
+lunch box,household
+water bottle,household
+usb-c cable,electronics
+usb-c cable 2m,electronics
+usb c braided cable,electronics
+lightning cable,electronics
+charging cable,electronics
+phone charger,electronics
+fast charger,electronics
+wall adapter,electronics
+power bank,electronics
+earphones,electronics
+earbuds,electronics
+wireless earbuds,electronics
+headphones,electronics
+bluetooth speaker,electronics
+hdmi cable,electronics
+extension cord,electronics
+power strip,electronics
+mouse,electronics
+wireless mouse,electronics
+keyboard,electronics
+usb flash drive,electronics
+pen drive,electronics
+memory card,electronics
+sd card,electronics
+hard drive,electronics
+screen protector,electronics
+phone case,electronics
+screen microfiber wipes,electronics
+laptop stand,electronics
+webcam,electronics
+router,electronics
+smart plug,electronics
+printer ink,electronics
+printer paper,electronics
+calculator,electronics
+smart watch,electronics
+watch strap,electronics
+car charger,electronics
+aux cable,electronics
+ethernet cable,electronics
+tv remote,electronics
+game controller,electronics
+paracetamol,pharmacy
+panadol,pharmacy
+ibuprofen,pharmacy
+aspirin,pharmacy
+cough syrup,pharmacy
+cough drops,pharmacy
+throat lozenges,pharmacy
+cold medicine,pharmacy
+antihistamine,pharmacy
+allergy tablets,pharmacy
+vitamin c,pharmacy
+vitamin d,pharmacy
+multivitamins,pharmacy
+fish oil capsules,pharmacy
+zinc tablets,pharmacy
+iron tablets,pharmacy
+calcium tablets,pharmacy
+plasters,pharmacy
+band aids,pharmacy
+bandage,pharmacy
+gauze,pharmacy
+antiseptic cream,pharmacy
+antiseptic liquid,pharmacy
+dettol,pharmacy
+first aid kit,pharmacy
+thermometer,pharmacy
+digital thermometer,pharmacy
+eye drops,pharmacy
+nasal spray,pharmacy
+oral rehydration salts,pharmacy
+jeevani,pharmacy
+antacid,pharmacy
+digestive tablets,pharmacy
+pain relief gel,pharmacy
+balm,pharmacy
+siddhalepa,pharmacy
+prescription refill,pharmacy
+prescriptions,pharmacy
+blood pressure monitor,pharmacy
+face masks,pharmacy
+hand sanitizer,pharmacy
+sanitiser,pharmacy
+cotton wool,pharmacy
+syringes,pharmacy
+insulin,pharmacy
+baby medicine,pharmacy
+mosquito repellent,pharmacy
+shampoo,personalCare
+herbal shampoo,personalCare
+herbal shampoo 400ml,personalCare
+conditioner,personalCare
+hair oil,personalCare
+hair gel,personalCare
+body wash,personalCare
+shower gel,personalCare
+soap bar,personalCare
+bath soap,personalCare
+hand wash,personalCare
+toothpaste,personalCare
+toothbrush,personalCare
+electric toothbrush heads,personalCare
+mouthwash,personalCare
+dental floss,personalCare
+deodorant,personalCare
+perfume,personalCare
+body spray,personalCare
+body lotion,personalCare
+moisturiser,personalCare
+face wash,personalCare
+facial cleanser,personalCare
+sunscreen,personalCare
+lip balm,personalCare
+razor,personalCare
+razor blades,personalCare
+shaving cream,personalCare
+sanitary pads,personalCare
+tampons,personalCare
+diapers,personalCare
+baby wipes,personalCare
+wet wipes,personalCare
+cotton buds,personalCare
+nail polish,personalCare
+nail cutter,personalCare
+hair brush,personalCare
+comb,personalCare
+hair ties,personalCare
+makeup remover,personalCare
+talcum powder,personalCare
+baby powder,personalCare
+baby lotion,personalCare
+hair dye,personalCare
+face cream,personalCare
+serum,personalCare
+lipstick,personalCare
+fresh bananas,produce
+ripe mangoes,produce
+organic carrots,produce
+baby carrots,produce
+fresh tomatoes,produce
+lettuce head,produce
+iceberg lettuce,produce
+romaine lettuce,produce
+fresh ginger,produce
+garlic bulbs,produce
+red grapes,produce
+green grapes,produce
+pears,produce
+peaches,produce
+plums,produce
+kiwi,produce
+passion fruit,produce
+guava,produce
+rambutan,produce
+jackfruit,produce
+pomegranate,produce
+beetroot,produce
+radish,produce
+zucchini,produce
+snake gourd,produce
+bitter gourd,produce
+drumsticks,produce
+gotukola,produce
+mukunuwenna,produce
+kankun,produce
+sweet corn,produce
+fresh spinach bunch,produce
+vegetables,produce
+fruit basket,produce
+salad leaves,produce
+spinach clamshell,produce
+baby spinach clamshell 250g,produce
+fresh fruit,produce
+mixed vegetables,produce
+fresh produce,produce
+milk 1l,dairy
+fresh milk 1l,dairy
+full cream milk,dairy
+lactose free milk,dairy
+oat milk 1l,dairy
+almond milk unsweetened,dairy
+coconut yoghurt,dairy
+strawberry yogurt,dairy
+plain yogurt,dairy
+drinking yoghurt,dairy
+cottage cheese,dairy
+feta cheese,dairy
+cheese slices,dairy
+grated cheese,dairy
+unsalted butter,dairy
+margarine,dairy
+eggs dozen,dairy
+brown eggs,dairy
+duck eggs,dairy
+quail eggs,dairy
+eggs 6 pack,dairy
+dairy milk,dairy
+evaporated milk,dairy
+cream,dairy
+cooking cream,dairy
+frozen yogurt,dairy
+milk tea packet,dairy
+string cheese,dairy
+yogurt cups,dairy
+toast bread,bakery
+sandwich bread,bakery
+sliced bread,bakery
+rye bread,bakery
+gluten free bread,bakery
+fresh bread,bakery
+bread loaf,bakery
+mini croissants,bakery
+chocolate croissant,bakery
+cheese buns,bakery
+sausage rolls,bakery
+egg rolls,bakery
+patties,bakery
+cutlets,bakery
+swiss roll,bakery
+butter cake,bakery
+sponge cake,bakery
+fruit cake,bakery
+cheesecake,bakery
+brownies,bakery
+apple pie,bakery
+waffles,bakery
+pancakes,bakery
+english muffins,bakery
+breadsticks,bakery
+focaccia,bakery
+ciabatta,bakery
+kimbula bun,bakery
+seeni sambol bun,bakery
+date cake,bakery
+bakery items,bakery
+fresh pastries,bakery
+jasmine rice,pantry
+rice 5kg,pantry
+keeri samba,pantry
+macaroni,pantry
+vermicelli,pantry
+rice noodles,pantry
+string hoppers flour,pantry
+rice flour,pantry
+atta flour,pantry
+baking powder,pantry
+baking soda,pantry
+yeast,pantry
+cocoa powder,pantry
+icing sugar,pantry
+white sugar,pantry
+sea salt,pantry
+garam masala,pantry
+cumin seeds,pantry
+mustard seeds,pantry
+fennel seeds,pantry
+cardamom,pantry
+cloves,pantry
+pepper powder,pantry
+chilli flakes,pantry
+maldive fish,pantry
+dried fish,pantry
+canned salmon,pantry
+baked beans,pantry
+canned corn,pantry
+canned tomatoes,pantry
+pasta sauce,pantry
+chilli sauce,pantry
+oyster sauce,pantry
+fish sauce,pantry
+bbq sauce,pantry
+salad dressing,pantry
+pickles,pantry
+lime pickle,pantry
+chutney,pantry
+treacle,pantry
+kithul treacle,pantry
+jaggery,pantry
+maple syrup,pantry
+breakfast cereal,pantry
+oatmeal,pantry
+quinoa,pantry
+green gram,pantry
+cowpea,pantry
+soya chunks,pantry
+peanuts,pantry
+walnuts,pantry
+pistachios,pantry
+sunflower seeds,pantry
+flax seeds,pantry
+green tea,pantry
+herbal tea,pantry
+coffee beans,pantry
+coffee powder,pantry
+nescafe,pantry
+hot chocolate,pantry
+energy drink,pantry
+fizzy drink,pantry
+coca cola,pantry
+lemonade,pantry
+mineral water,pantry
+water 5l,pantry
+fruit juice,pantry
+mango juice,pantry
+snacks,pantry
+cream crackers,pantry
+chocolate biscuits,pantry
+candy,pantry
+toffee,pantry
+gum,pantry
+frozen chicken,pantry
+chicken drumsticks,pantry
+chicken wings,pantry
+beef,pantry
+pork,pantry
+mutton,pantry
+salmon fillet,pantry
+tuna steak,pantry
+crab,pantry
+squid,pantry
+frozen fish fingers,pantry
+frozen pizza,pantry
+frozen vegetables,pantry
+meatballs,pantry
+bacon,pantry
+ham,pantry
+salami,pantry
+tofu,pantry
+coconut cream,pantry
+olive oil extra virgin,pantry
+sesame oil,pantry
+groceries,pantry
+dishwasher tablets,household
+liquid detergent,household
+detergent powder,household
+stain remover,household
+disinfectant spray,household
+multi surface cleaner,household
+bathroom cleaner,household
+drain cleaner,household
+kitchen roll,household
+facial tissues,household
+tissue box,household
+serviettes,household
+paper plates,household
+paper cups,household
+plastic cups,household
+straws,household
+food wrap,household
+freezer bags,household
+dish brush,household
+toilet brush,household
+microfiber cloth,household
+cleaning cloths,household
+duster,household
+bucket,household
+laundry basket,household
+ironing spray,household
+naphthalene balls,household
+room spray,household
+incense sticks,household
+lighter,household
+torch,household
+flashlight,household
+extension bulb,household
+tube light,household
+9v battery,household
+d batteries,household
+pet food,household
+cat food,household
+dog food,household
+cat litter,household
+plant pot,household
+potting soil,household
+garden hose,household
+umbrella,household
+iphone charger,electronics
+usb charger,electronics
+type c cable,electronics
+micro usb cable,electronics
+charging brick,electronics
+magsafe charger,electronics
+wireless charger,electronics
+airpods,electronics
+headset,electronics
+gaming headset,electronics
+speaker,electronics
+soundbar,electronics
+microphone,electronics
+usb hub,electronics
+usb adapter,electronics
+hdmi adapter,electronics
+dongle,electronics
+laptop charger,electronics
+laptop bag,electronics
+tablet case,electronics
+ipad case,electronics
+stylus,electronics
+tempered glass,electronics
+phone holder,electronics
+selfie stick,electronics
+tripod,electronics
+camera battery,electronics
+external ssd,electronics
+ssd,electronics
+ram,electronics
+monitor,electronics
+monitor cable,electronics
+cctv camera,electronics
+smart bulb,electronics
+wifi extender,electronics
+modem,electronics
+sim card,electronics
+reload card,electronics
+toner,electronics
+ink cartridge,electronics
+electric kettle,electronics
+rice cooker,electronics
+blender,electronics
+iron box,electronics
+hair dryer,electronics
+fan,electronics
+tablets for headache,pharmacy
+headache tablets,pharmacy
+painkillers,pharmacy
+fever medicine,pharmacy
+flu tablets,pharmacy
+cetirizine,pharmacy
+loratadine,pharmacy
+vitamin b complex,pharmacy
+vitamin tablets,pharmacy
+omega 3,pharmacy
+probiotics,pharmacy
+protein powder,pharmacy
+elastic bandage,pharmacy
+crepe bandage,pharmacy
+burn cream,pharmacy
+rash cream,pharmacy
+antifungal cream,pharmacy
+hydrocortisone cream,pharmacy
+saline drops,pharmacy
+contact lens solution,pharmacy
+ear drops,pharmacy
+inhaler,pharmacy
+glucose meter,pharmacy
+test strips,pharmacy
+pregnancy test,pharmacy
+condoms,pharmacy
+nicotine gum,pharmacy
+medicine,pharmacy
+medicines,pharmacy
+tablets,pharmacy
+capsules,pharmacy
+syrup,pharmacy
+ointment,pharmacy
+pharmacy items,pharmacy
+dry shampoo,personalCare
+anti dandruff shampoo,personalCare
+baby shampoo,personalCare
+hair mask,personalCare
+hair serum,personalCare
+hair spray,personalCare
+coconut hair oil,personalCare
+beard oil,personalCare
+aftershave,personalCare
+shaving gel,personalCare
+disposable razors,personalCare
+wax strips,personalCare
+roll on,personalCare
+antiperspirant,personalCare
+cologne,personalCare
+hand cream,personalCare
+foot cream,personalCare
+night cream,personalCare
+day cream,personalCare
+face mask sheet,personalCare
+toner face,personalCare
+cleansing milk,personalCare
+bb cream,personalCare
+foundation,personalCare
+mascara,personalCare
+eyeliner,personalCare
+kajal,personalCare
+nail polish remover,personalCare
+cotton pads,personalCare
+panty liners,personalCare
+baby diapers,personalCare
+pampers,personalCare
+adult diapers,personalCare
+baby oil,personalCare
+baby soap,personalCare
+kids toothpaste,personalCare
+whitening toothpaste,personalCare
+tongue cleaner,personalCare
+hair clips,personalCare
+shower cap,personalCare
+loofah,personalCare
+body scrub,personalCare

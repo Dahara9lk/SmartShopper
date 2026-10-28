@@ -1,14 +1,6 @@
 //
 //  AppEnvironment.swift
 //  SmartShopper
-//
-//  Creates every service and shared view model ONCE and hands them to the views.
-//  (This is simple dependency injection - views never create services themselves.)
-//
-//  If GoogleService-Info.plist is in the project, the real Firebase backend is used.
-//  If not, the app runs in DEMO MODE with data saved on the device, so it still
-//  runs straight away in the lab.
-//
 
 import Foundation
 import FirebaseCore

@@ -19,16 +19,16 @@ enum DemoData {
 
     /// Figma S6 "Popular Household Staples"
     static let staples: [Staple] = [
-        Staple(name: "Whole Milk", detail: "Dairy • 1 gal", category: .dairy),
-        Staple(name: "Organic Eggs", detail: "Farm Fresh • 12", category: .dairy),
-        Staple(name: "Sourdough", detail: "Bakery • 1 loaf", category: .bakery),
+        Staple(name: "Fresh Milk", detail: "Dairy • 1 L", category: .dairy),
+        Staple(name: "Eggs", detail: "Farm Fresh • 10", category: .dairy),
+        Staple(name: "Sandwich Bread", detail: "Bakery • 1 loaf", category: .bakery),
         Staple(name: "Bananas", detail: "Produce • 1 bunch", category: .produce),
-        Staple(name: "Ground Coffee", detail: "Dark Roast • 12oz", category: .pantry),
-        Staple(name: "Olive Oil", detail: "Extra Virgin • 500ml", category: .pantry)
+        Staple(name: "Ceylon Tea", detail: "Pantry • 200 g", category: .pantry),
+        Staple(name: "Red Rice", detail: "Pantry • 1 kg", category: .pantry)
     ]
 
     /// Figma S5 "Quick" chips on the Add Item screen
-    static let quickPicks = ["Almond Milk", "Sourdough Bread", "Organic Eggs", "Bananas", "Dish Soap"]
+    static let quickPicks = ["Fresh Milk", "Bread", "Eggs", "Bananas", "Dish Soap"]
 
     /// 4 trips over the last 2 weeks for the History charts.
     static func sampleTrips(userName: String) -> [ShoppingTrip] {
@@ -40,33 +40,34 @@ enum DemoData {
         func item(_ name: String, _ category: ItemCategory, _ price: Double, by: String? = nil) -> TripItem {
             TripItem(name: name, category: category, price: price, quantity: 1, addedByName: by ?? userName)
         }
+        // Sample trips at Sri Lankan shops, prices in rupees (LKR)
         return [
-            ShoppingTrip(storeName: "GreenValley Organic Grocer", storeArea: "Market District",
+            ShoppingTrip(storeName: "Keells Super", storeArea: "Union Place, Colombo 02",
                          date: daysAgo(1, hour: 17),
-                         items: [item("Whole Milk", .dairy, 3.49), item("Sourdough Bread", .bakery, 4.20),
-                                 item("Organic Spinach", .produce, 2.99), item("Hass Avocados", .produce, 3.50, by: "Alex"),
-                                 item("Chia Seeds", .pantry, 5.80), item("Greek Yogurt", .dairy, 4.10, by: "Mom"),
-                                 item("Pasture Eggs", .dairy, 3.29), item("Dark Chocolate 70%", .pantry, 3.89, by: "Mom")],
+                         items: [item("Fresh Milk 1L", .dairy, 480), item("Sandwich Bread", .bakery, 220),
+                                 item("Carrots 500g", .produce, 290), item("Bananas", .produce, 260, by: "Alex"),
+                                 item("Red Rice 1kg", .pantry, 310), item("Curd Pot", .dairy, 650, by: "Mom"),
+                                 item("Eggs 10-pk", .dairy, 520), item("Chocolate Bar", .pantry, 450, by: "Mom")],
                          plannedCount: 8, durationMinutes: 18, minutesSaved: 18, familyMemberCount: 4),
-            ShoppingTrip(storeName: "Artisan Crust & Dairy", storeArea: "North Boulevard",
+            ShoppingTrip(storeName: "Perera & Sons Bakery", storeArea: "Maradana",
                          date: daysAgo(6, hour: 13),
-                         items: [item("Sourdough Loaf", .bakery, 6.50), item("Salted Cream Butter", .dairy, 4.80),
-                                 item("Farm Eggs", .dairy, 4.30), item("French Croissant", .bakery, 6.50)],
+                         items: [item("Butter Cake", .bakery, 780), item("Anchor Butter", .dairy, 1250),
+                                 item("Farm Eggs", .dairy, 520), item("Fish Buns", .bakery, 360)],
                          plannedCount: 5, durationMinutes: 12, minutesSaved: 9),
-            ShoppingTrip(storeName: "TechHub & Essentials", storeArea: "West Mall Fl. 2",
+            ShoppingTrip(storeName: "Singer Mega", storeArea: "Borella",
                          date: daysAgo(9, hour: 18),
-                         items: [item("USB-C Braided Cable (2m)", .electronics, 19.90),
-                                 item("AA Lithium Batteries 8-pk", .household, 14.00),
-                                 item("Screen Microfiber Wipes", .electronics, 11.00)],
+                         items: [item("USB-C Cable (2m)", .electronics, 2490),
+                                 item("AA Batteries 4-pk", .household, 990),
+                                 item("Screen Wipes", .electronics, 750)],
                          plannedCount: 3, durationMinutes: 10, minutesSaved: 6),
-            ShoppingTrip(storeName: "Downtown Superstore", storeArea: "Main Atrium",
+            ShoppingTrip(storeName: "Cargills Food City", storeArea: "Kollupitiya",
                          date: daysAgo(13, hour: 11),
-                         items: [item("Almond Butter", .pantry, 9.50), item("Olive Oil 1L", .pantry, 12.40),
-                                 item("Dish Soap", .household, 3.80), item("Kitchen Towels", .household, 6.20),
-                                 item("Sparkling Water 12pk", .pantry, 8.90), item("Herbal Shampoo", .personalCare, 7.40),
-                                 item("Toothpaste", .personalCare, 3.20), item("Brown Rice", .pantry, 4.60),
-                                 item("Bananas", .produce, 2.10), item("Ground Coffee", .pantry, 11.20),
-                                 item("Paper Towels", .household, 5.10), item("Cheddar Cheese", .dairy, 4.80)],
+                         items: [item("Peanut Butter", .pantry, 1150), item("Coconut Oil 1L", .pantry, 980),
+                                 item("Dish Wash Liquid", .household, 420), item("Kitchen Towels", .household, 560),
+                                 item("Soda 1.5L", .pantry, 380), item("Herbal Shampoo", .personalCare, 890),
+                                 item("Toothpaste", .personalCare, 340), item("Basmati Rice 1kg", .pantry, 720),
+                                 item("Bananas", .produce, 260), item("Ceylon Tea 200g", .pantry, 650),
+                                 item("Toilet Paper 4-roll", .household, 590), item("Cheddar Cheese", .dairy, 1350)],
                          plannedCount: 14, durationMinutes: 31, minutesSaved: 12)
         ]
     }

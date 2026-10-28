@@ -1,0 +1,842 @@
+{
+  "activityEntities" : [
+    "trainingDataAdded",
+    [
+      {
+        "createdDate" : "2026-10-28T06:30:16Z",
+        "event" : "trainingDataAdded",
+        "id" : "E1E62C9C-668B-4AD6-ADB3-CA6B777124C6",
+        "subtitle" : "items_dataset.csv",
+        "title" : "Training Data Added"
+      }
+    ],
+    "trainingFinished",
+    [
+      {
+        "createdDate" : "2026-10-28T06:31:37Z",
+        "event" : "trainingFinished",
+        "id" : "B818516A-4733-4CBF-9B38-5B0D5982DF9A",
+        "subtitle" : "50 iterations",
+        "title" : "Training Completed"
+      }
+    ],
+    "trainingStarted",
+    [
+      {
+        "createdDate" : "2026-10-28T06:31:37Z",
+        "event" : "trainingStarted",
+        "id" : "83E52570-5D43-40EE-B3B5-1EB0899B060A",
+        "subtitle" : "50 iterations",
+        "title" : "Training Started"
+      }
+    ],
+    "experimentCreated",
+    [
+      {
+        "createdDate" : "2026-10-28T06:29:21Z",
+        "event" : "experimentCreated",
+        "id" : "5E0DFB6E-E26F-422A-8EAC-70CB78DB900E",
+        "subtitle" : "ItemCategoryClassifier 1",
+        "title" : "Model Source Created"
+      }
+    ]
+  ],
+  "contentDataResult" : {
+    "createdDate" : "2026-10-28T06:30:16Z"
+  },
+  "createdDate" : "2026-10-28T06:29:21Z",
+  "evaluationContainerEntity" : {
+    "createdDate" : "2026-10-28T06:31:37Z",
+    "evaluationEntities" : [
+      {
+        "analysedDataType" : "none",
+        "createdDate" : "2026-10-28T06:31:37Z",
+        "dataResult" : {
+
+        },
+        "id" : "74674ffc-53d4-4848-a756-d1a94a9d3dfb"
+      }
+    ],
+    "id" : "aedb72a7-43af-49f9-8511-e255eee4897f",
+    "modifiedDate" : "2026-10-28T06:31:37Z",
+    "previewType" : "textClassifier",
+    "testingEvaluationEntity" : {
+      "analysedDataType" : "none",
+      "createdDate" : "2026-10-28T06:29:21Z",
+      "dataResult" : {
+        "createdDate" : "2026-10-28T06:30:16Z"
+      },
+      "id" : "c045450c-e4e2-4921-a730-5fccf228bd9c"
+    },
+    "trainingEvaluationEntity" : {
+      "analysedDataType" : "none",
+      "createdDate" : "2026-10-28T06:29:21Z",
+      "dataResult" : {
+        "classesCount" : 8,
+        "createdDate" : "2026-10-28T06:30:16Z",
+        "dataAnalysis" : {
+          "classifierAnalysis" : {
+            "labelStats" : {
+              "bakery" : 74,
+              "dairy" : 74,
+              "electronics" : 88,
+              "household" : 92,
+              "pantry" : 188,
+              "personalCare" : 89,
+              "pharmacy" : 81,
+              "produce" : 102
+            }
+          },
+          "issues" : [
+            {
+              "description" : "8 classes found, including pantry, produce, household",
+              "severity" : "debug"
+            },
+            {
+              "description" : "788 texts found, automatically creating validation set",
+              "severity" : "good"
+            },
+            {
+              "description" : "Smallest class is \"bakery\" with 74 texts",
+              "severity" : "debug"
+            },
+            {
+              "description" : "Largest class is \"pantry\" with 188 text",
+              "severity" : "debug"
+            }
+          ],
+          "objectDetectorAnalysis" : {
+            "details" : {
+
+            }
+          },
+          "summary" : {
+            "canUseValidation" : 1,
+            "classCount" : 8,
+            "sampleCount" : 788
+          }
+        },
+        "dataSourceID" : "61C289BE-7CCF-46E3-B8AF-A2E3BCF994F3",
+        "dataURL" : "file:///Users/dahara/Desktop/SmartShopper/MLTraining/items_dataset.csv",
+        "itemsCount" : 788
+      },
+      "dataSourceID" : "61C289BE-7CCF-46E3-B8AF-A2E3BCF994F3",
+      "evaluationResult" : {
+        "textClassifier" : {
+          "accuracy" : 0.9973297730307076,
+          "confusionMatrix" : [
+            {
+              "actual" : "bakery",
+              "count" : 73,
+              "expected" : "bakery"
+            },
+            {
+              "actual" : "dairy",
+              "count" : 71,
+              "expected" : "dairy"
+            },
+            {
+              "actual" : "electronics",
+              "count" : 84,
+              "expected" : "electronics"
+            },
+            {
+              "actual" : "household",
+              "count" : 87,
+              "expected" : "household"
+            },
+            {
+              "actual" : "pantry",
+              "count" : 1,
+              "expected" : "dairy"
+            },
+            {
+              "actual" : "pantry",
+              "count" : 179,
+              "expected" : "pantry"
+            },
+            {
+              "actual" : "personalCare",
+              "count" : 82,
+              "expected" : "personalCare"
+            },
+            {
+              "actual" : "pharmacy",
+              "count" : 76,
+              "expected" : "pharmacy"
+            },
+            {
+              "actual" : "produce",
+              "count" : 1,
+              "expected" : "pantry"
+            },
+            {
+              "actual" : "produce",
+              "count" : 95,
+              "expected" : "produce"
+            }
+          ],
+          "statsByLabel" : {
+            "bakery" : {
+              "count" : 73,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 1
+                }
+              }
+            },
+            "dairy" : {
+              "count" : 71,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 0.9861111111111112,
+                  "recall" : 1
+                }
+              }
+            },
+            "electronics" : {
+              "count" : 84,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 1
+                }
+              }
+            },
+            "household" : {
+              "count" : 87,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 1
+                }
+              }
+            },
+            "pantry" : {
+              "count" : 180,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 0.9944444444444445,
+                  "recall" : 0.9944444444444445
+                }
+              }
+            },
+            "personalCare" : {
+              "count" : 82,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 1
+                }
+              }
+            },
+            "pharmacy" : {
+              "count" : 76,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 1
+                }
+              }
+            },
+            "produce" : {
+              "count" : 96,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 0.9895833333333334
+                }
+              }
+            }
+          }
+        }
+      },
+      "id" : "e163d4d0-c226-4c35-b5fd-dc4fcdbd0adc"
+    },
+    "validationEvaluationEntity" : {
+      "analysedDataType" : "auto",
+      "createdDate" : "2026-10-28T06:29:21Z",
+      "dataResult" : {
+        "createdDate" : "2026-10-28T06:30:16Z"
+      },
+      "evaluationResult" : {
+        "textClassifier" : {
+          "accuracy" : 0.4871794871794872,
+          "confusionMatrix" : [
+            {
+              "actual" : "bakery",
+              "count" : 1,
+              "expected" : "bakery"
+            },
+            {
+              "actual" : "dairy",
+              "count" : 3,
+              "expected" : "dairy"
+            },
+            {
+              "actual" : "electronics",
+              "count" : 3,
+              "expected" : "dairy"
+            },
+            {
+              "actual" : "electronics",
+              "count" : 1,
+              "expected" : "electronics"
+            },
+            {
+              "actual" : "household",
+              "count" : 3,
+              "expected" : "dairy"
+            },
+            {
+              "actual" : "household",
+              "count" : 2,
+              "expected" : "household"
+            },
+            {
+              "actual" : "pantry",
+              "count" : 2,
+              "expected" : "dairy"
+            },
+            {
+              "actual" : "pantry",
+              "count" : 5,
+              "expected" : "pantry"
+            },
+            {
+              "actual" : "pantry",
+              "count" : 1,
+              "expected" : "produce"
+            },
+            {
+              "actual" : "personalCare",
+              "count" : 4,
+              "expected" : "dairy"
+            },
+            {
+              "actual" : "personalCare",
+              "count" : 3,
+              "expected" : "personalCare"
+            },
+            {
+              "actual" : "pharmacy",
+              "count" : 3,
+              "expected" : "dairy"
+            },
+            {
+              "actual" : "pharmacy",
+              "count" : 2,
+              "expected" : "pharmacy"
+            },
+            {
+              "actual" : "produce",
+              "count" : 4,
+              "expected" : "dairy"
+            },
+            {
+              "actual" : "produce",
+              "count" : 2,
+              "expected" : "produce"
+            }
+          ],
+          "statsByLabel" : {
+            "bakery" : {
+              "count" : 1,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 1
+                }
+              }
+            },
+            "dairy" : {
+              "count" : 3,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 0.13636363636363635,
+                  "recall" : 1
+                }
+              }
+            },
+            "electronics" : {
+              "count" : 4,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 0.25
+                }
+              }
+            },
+            "household" : {
+              "count" : 5,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 0.4
+                }
+              }
+            },
+            "pantry" : {
+              "count" : 8,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 0.625
+                }
+              }
+            },
+            "personalCare" : {
+              "count" : 7,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 0.42857142857142855
+                }
+              }
+            },
+            "pharmacy" : {
+              "count" : 5,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 0.4
+                }
+              }
+            },
+            "produce" : {
+              "count" : 6,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 0.6666666666666666,
+                  "recall" : 0.3333333333333333
+                }
+              }
+            }
+          }
+        }
+      },
+      "id" : "d44cc1b4-1c83-496f-835b-ff08a4dec9a8"
+    }
+  },
+  "evaluationEntity" : {
+    "analysedDataType" : "none",
+    "dataResult" : {
+
+    },
+    "id" : "b86b59a0-abf5-4dd5-ac05-800e9a2a7f13"
+  },
+  "evaluationState" : "uninitialized",
+  "id" : "0283FE37-057D-43DE-9DAD-10F503AB199F",
+  "modelEntity" : {
+    "createdDate" : "2026-10-28T06:29:21Z",
+    "experimentID" : "0283FE37-057D-43DE-9DAD-10F503AB199F",
+    "id" : "FFB38A61-0BA0-425D-BF76-5B2DD33FFA69",
+    "modelURL" : "Models/ItemCategoryClassifier%201.mlmodel",
+    "modifiedDate" : "2026-10-28T06:29:21Z",
+    "title" : "",
+    "version" : "1.0"
+  },
+  "modifiedDate" : "2026-10-28T06:31:37Z",
+  "preferredFilename" : "ItemCategoryClassifier 1",
+  "settingEntity" : {
+    "algorithmType" : "maxEnt",
+    "augmentations" : [
+
+    ],
+    "featureNames" : [
+
+    ],
+    "handActionClassifierAugmentations" : [
+
+    ],
+    "handPoseClassifierAugmentations" : [
+
+    ],
+    "harVideoAugmentations" : 0,
+    "iterationCount" : 50,
+    "seedType" : "default",
+    "styleTransferAlgorithmType" : "image",
+    "taskType" : "textClassifier",
+    "textClassifierArabicLanguage" : "automatic",
+    "textClassifierCJKLanguage" : "automatic",
+    "textClassifierCyrillicLanguage" : "automatic",
+    "textClassifierIndicLanguage" : "automatic",
+    "textClassifierLatin" : "automatic",
+    "textClassifierScript" : "latin",
+    "textClassifierThaiLanguage" : "automatic"
+  },
+  "snapshotRole" : {
+    "withoutSnapshots" : 0
+  },
+  "state" : "trained",
+  "title" : "ItemCategoryClassifier 1",
+  "trainingEntity" : {
+    "analysedDataType" : "datasource",
+    "checkpointMetrics" : {
+
+    },
+    "dataResult" : {
+      "classesCount" : 8,
+      "createdDate" : "2026-10-28T06:30:16Z",
+      "dataAnalysis" : {
+        "classifierAnalysis" : {
+          "labelStats" : {
+            "bakery" : 74,
+            "dairy" : 74,
+            "electronics" : 88,
+            "household" : 92,
+            "pantry" : 188,
+            "personalCare" : 89,
+            "pharmacy" : 81,
+            "produce" : 102
+          }
+        },
+        "issues" : [
+          {
+            "description" : "8 classes found, including pantry, produce, household",
+            "severity" : "debug"
+          },
+          {
+            "description" : "788 texts found, automatically creating validation set",
+            "severity" : "good"
+          },
+          {
+            "description" : "Smallest class is \"bakery\" with 74 texts",
+            "severity" : "debug"
+          },
+          {
+            "description" : "Largest class is \"pantry\" with 188 text",
+            "severity" : "debug"
+          }
+        ],
+        "objectDetectorAnalysis" : {
+          "details" : {
+
+          }
+        },
+        "summary" : {
+          "canUseValidation" : 1,
+          "classCount" : 8,
+          "sampleCount" : 788
+        }
+      },
+      "dataSourceID" : "61C289BE-7CCF-46E3-B8AF-A2E3BCF994F3",
+      "dataURL" : "file:///Users/dahara/Desktop/SmartShopper/MLTraining/items_dataset.csv",
+      "itemsCount" : 788
+    },
+    "dataSourceID" : "61C289BE-7CCF-46E3-B8AF-A2E3BCF994F3",
+    "featureExtractionCheckpointMayBeAvailable" : false,
+    "finishTime" : "2026-10-28T06:31:37Z",
+    "progress" : [
+
+    ],
+    "snapshottableCheckpoints" : {
+
+    },
+    "startTime" : "2026-10-28T06:31:37Z",
+    "trainingAccuracy" : 0.9973297730307076,
+    "trainingResults" : {
+      "textClassifier" : {
+        "accuracy" : 0.9973297730307076,
+        "confusionMatrix" : [
+          {
+            "actual" : "bakery",
+            "count" : 73,
+            "expected" : "bakery"
+          },
+          {
+            "actual" : "dairy",
+            "count" : 71,
+            "expected" : "dairy"
+          },
+          {
+            "actual" : "electronics",
+            "count" : 84,
+            "expected" : "electronics"
+          },
+          {
+            "actual" : "household",
+            "count" : 87,
+            "expected" : "household"
+          },
+          {
+            "actual" : "pantry",
+            "count" : 1,
+            "expected" : "dairy"
+          },
+          {
+            "actual" : "pantry",
+            "count" : 179,
+            "expected" : "pantry"
+          },
+          {
+            "actual" : "personalCare",
+            "count" : 82,
+            "expected" : "personalCare"
+          },
+          {
+            "actual" : "pharmacy",
+            "count" : 76,
+            "expected" : "pharmacy"
+          },
+          {
+            "actual" : "produce",
+            "count" : 1,
+            "expected" : "pantry"
+          },
+          {
+            "actual" : "produce",
+            "count" : 95,
+            "expected" : "produce"
+          }
+        ],
+        "statsByLabel" : {
+          "bakery" : {
+            "count" : 73,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 1
+              }
+            }
+          },
+          "dairy" : {
+            "count" : 71,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 0.9861111111111112,
+                "recall" : 1
+              }
+            }
+          },
+          "electronics" : {
+            "count" : 84,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 1
+              }
+            }
+          },
+          "household" : {
+            "count" : 87,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 1
+              }
+            }
+          },
+          "pantry" : {
+            "count" : 180,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 0.9944444444444445,
+                "recall" : 0.9944444444444445
+              }
+            }
+          },
+          "personalCare" : {
+            "count" : 82,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 1
+              }
+            }
+          },
+          "pharmacy" : {
+            "count" : 76,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 1
+              }
+            }
+          },
+          "produce" : {
+            "count" : 96,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 0.9895833333333334
+              }
+            }
+          }
+        }
+      }
+    },
+    "validationAccuracy" : 0.4871794871794872,
+    "validationResults" : {
+      "textClassifier" : {
+        "accuracy" : 0.4871794871794872,
+        "confusionMatrix" : [
+          {
+            "actual" : "bakery",
+            "count" : 1,
+            "expected" : "bakery"
+          },
+          {
+            "actual" : "dairy",
+            "count" : 3,
+            "expected" : "dairy"
+          },
+          {
+            "actual" : "electronics",
+            "count" : 3,
+            "expected" : "dairy"
+          },
+          {
+            "actual" : "electronics",
+            "count" : 1,
+            "expected" : "electronics"
+          },
+          {
+            "actual" : "household",
+            "count" : 3,
+            "expected" : "dairy"
+          },
+          {
+            "actual" : "household",
+            "count" : 2,
+            "expected" : "household"
+          },
+          {
+            "actual" : "pantry",
+            "count" : 2,
+            "expected" : "dairy"
+          },
+          {
+            "actual" : "pantry",
+            "count" : 5,
+            "expected" : "pantry"
+          },
+          {
+            "actual" : "pantry",
+            "count" : 1,
+            "expected" : "produce"
+          },
+          {
+            "actual" : "personalCare",
+            "count" : 4,
+            "expected" : "dairy"
+          },
+          {
+            "actual" : "personalCare",
+            "count" : 3,
+            "expected" : "personalCare"
+          },
+          {
+            "actual" : "pharmacy",
+            "count" : 3,
+            "expected" : "dairy"
+          },
+          {
+            "actual" : "pharmacy",
+            "count" : 2,
+            "expected" : "pharmacy"
+          },
+          {
+            "actual" : "produce",
+            "count" : 4,
+            "expected" : "dairy"
+          },
+          {
+            "actual" : "produce",
+            "count" : 2,
+            "expected" : "produce"
+          }
+        ],
+        "statsByLabel" : {
+          "bakery" : {
+            "count" : 1,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 1
+              }
+            }
+          },
+          "dairy" : {
+            "count" : 3,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 0.13636363636363635,
+                "recall" : 1
+              }
+            }
+          },
+          "electronics" : {
+            "count" : 4,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 0.25
+              }
+            }
+          },
+          "household" : {
+            "count" : 5,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 0.4
+              }
+            }
+          },
+          "pantry" : {
+            "count" : 8,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 0.625
+              }
+            }
+          },
+          "personalCare" : {
+            "count" : 7,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 0.42857142857142855
+              }
+            }
+          },
+          "pharmacy" : {
+            "count" : 5,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 0.4
+              }
+            }
+          },
+          "produce" : {
+            "count" : 6,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 0.6666666666666666,
+                "recall" : 0.3333333333333333
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "validationEntity" : {
+    "analysedDataType" : "auto",
+    "dataResult" : {
+      "createdDate" : "2026-10-28T06:30:16Z"
+    },
+    "splitOptions" : {
+      "strategy" : {
+        "automatic" : {
+
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

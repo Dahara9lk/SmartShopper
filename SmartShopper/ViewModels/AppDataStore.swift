@@ -344,14 +344,15 @@ final class AppDataStore: ObservableObject {
 enum PriceGuide {
     static func estimate(for category: ItemCategory) -> Double {
         switch category {
-        case .produce: return 2.99
-        case .dairy: return 3.49
-        case .bakery: return 4.20
-        case .pantry: return 4.50
-        case .household: return 5.25
-        case .electronics: return 12.99
-        case .pharmacy: return 6.50
-        case .personalCare: return 5.99
+        case .produce: return 350
+                case .dairy: return 480
+                case .bakery: return 220
+                case .pantry: return 650
+                case .household: return 750
+                case .electronics: return 2500
+                case .pharmacy: return 400
+                case .personalCare: return 850
+
         }
     }
 }
