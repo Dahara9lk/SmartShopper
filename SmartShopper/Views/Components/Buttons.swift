@@ -1,13 +1,10 @@
 //
 //  Buttons.swift
 //  SmartShopper
-//
-//  The big green "Create Account & Continue" style button and its lighter sibling.
-//
+
 
 import SwiftUI
 
-/// Full-width green button (Figma primary button).
 struct PrimaryButton: View {
     let title: String
     var icon: String? = nil
@@ -42,7 +39,7 @@ struct PrimaryButton: View {
     }
 }
 
-/// Light green / grey button (Figma "Restore from Recent Trip", "View Match").
+
 struct SecondaryButton: View {
     let title: String
     var icon: String? = nil
@@ -96,12 +93,15 @@ struct DarkButton: View {
     }
 }
 
-/// Small shrink when pressed - a little micro-interaction for every button.
+
 struct PressableStyle: ButtonStyle {
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .scaleEffect(configuration.isPressed ? 0.97 : 1)
+            .scaleEffect(configuration.isPressed && !reduceMotion ? 0.97 : 1)
             .opacity(configuration.isPressed ? 0.9 : 1)
-            .animation(.easeOut(duration: 0.12), value: configuration.isPressed)
+            .animation(reduceMotion ? nil : .easeOut(duration: 0.12), value: configuration.isPressed)
     }
+
 }

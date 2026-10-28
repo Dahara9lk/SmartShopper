@@ -124,6 +124,7 @@ final class SmartMapViewModel: ObservableObject {
         if Task.isCancelled { return }
 
         stores = StoreMatcher.rank(found, items: items, radiusMeters: radius)
+        unmatchedItems = StoreMatcher.unmatchedItems(items, stores: stores)
         WidgetBridge.updateBestShop(stores.first)
         state = stores.isEmpty ? .noResults : .results
 
