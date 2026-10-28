@@ -1,0 +1,31 @@
+{
+  "activityEntities" : [
+    "dataSourceCreated",
+    [
+      {
+        "createdDate" : "2026-10-28T10:35:45Z",
+        "event" : "dataSourceCreated",
+        "id" : "A4902517-09EA-4A98-9E03-595B0381ECBE",
+        "subtitle" : "items_unseen_test.csv",
+        "title" : "Data Source Created"
+      }
+    ]
+  ],
+  "createdDate" : "2026-10-28T10:35:45Z",
+  "dataPathRelativeToProjectURL" : "../../../../Downloads/items_unseen_test.csv/",
+  "dataResult" : {
+    "createdDate" : "2026-10-28T10:35:45Z",
+    "dataSourceID" : "9BCEB7D7-EE33-4248-AA5D-E8EE29637457",
+    "dataURL" : "file:///Users/dahara/Downloads/items_unseen_test.csv"
+  },
+  "dataURL" : "file:///Users/dahara/Downloads/items_unseen_test.csv",
+  "experimentIDs" : [
+    "0283FE37-057D-43DE-9DAD-10F503AB199F"
+  ],
+  "id" : "9BCEB7D7-EE33-4248-AA5D-E8EE29637457",
+  "modifiedDate" : "2026-10-28T10:35:45Z",
+  "pathType" : 0,
+  "preferredFilename" : "items_unseen_test.csv",
+  "title" : "items_unseen_test.csv",
+  "version" : "1.0"
+}

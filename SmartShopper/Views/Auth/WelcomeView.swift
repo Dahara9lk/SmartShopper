@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-/// Signed-out area: Welcome -> Create Account / Sign In.
+// Signed-out area: Welcome -> Create Account / Sign In.
 struct AuthFlowView: View {
     var body: some View {
         NavigationStack {
@@ -76,7 +76,6 @@ struct WelcomeView: View {
         .toolbar(.hidden, for: .navigationBar)
     }
 
-    /// Figma S22 page 1
     private var pageOne: some View {
         ScrollView {
             VStack(spacing: 18) {

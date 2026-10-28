@@ -31,8 +31,6 @@ struct MainTabView: View {
         }
     }
 
-    // MARK: iPhone
-
     private var iPhoneLayout: some View {
         TabView(selection: $router.selectedTab) {
             ForEach(AppTab.allCases) { tab in
@@ -46,7 +44,7 @@ struct MainTabView: View {
         .tint(.brandPrimary)
     }
 
-    // MARK: iPad
+    
 
     private var iPadLayout: some View {
         NavigationSplitView {
@@ -67,14 +65,12 @@ struct MainTabView: View {
             .navigationSplitViewColumnWidth(min: 220, ideal: 250)
         } detail: {
             screen(for: router.selectedTab)
-                // .id makes SwiftUI rebuild the right side when the section changes.
-                // Without it the iPad split view can keep showing the old screen.
+                
                 .id(router.selectedTab)
         }
         .tint(.brandPrimary)
     }
 
-    /// Each tab has its own NavigationStack so pushing inside one tab doesn't affect the others.
     @ViewBuilder
     private func screen(for tab: AppTab) -> some View {
         switch tab {

@@ -13,7 +13,7 @@ enum KeychainHelper {
 
     private static let service = "SmartShopper"
 
-    /// Saves (or replaces) a text value.
+// Saves (or replaces) a text value.
     @discardableResult
     static func save(_ value: String, for key: String) -> Bool {
         let data = Data(value.utf8)
@@ -28,7 +28,7 @@ enum KeychainHelper {
         return SecItemAdd(query as CFDictionary, nil) == errSecSuccess
     }
 
-    /// Reads a text value, or nil if it does not exist.
+// Reads a text value, or nil if it does not exist.
     static func read(_ key: String) -> String? {
         let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,

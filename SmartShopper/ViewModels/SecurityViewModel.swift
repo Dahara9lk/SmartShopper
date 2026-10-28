@@ -34,7 +34,7 @@ final class SecurityViewModel: ObservableObject {
     @Published private(set) var lockoutSecondsLeft = 0
     @Published private(set) var lockoutTotalSeconds = 60
     @Published private(set) var attemptsLeft = 3
-    /// Shows the "Create a passcode" sheet after Face ID is switched on.
+    // Shows the "Create a passcode" sheet after Face ID is switched on.
     @Published var showPasscodeSetup = false
 
     private let settings: SettingsStore
@@ -51,21 +51,21 @@ final class SecurityViewModel: ObservableObject {
     var isBiometryAvailable: Bool { biometrics.isAvailable }
     var passcodeLength: Int { 6 }
 
-    // MARK: When to lock
+// When to lock
 
-    /// App launched.
+    // App launched.
     func lockOnLaunch() {
         if settings.faceIDEnabled && PasscodeStore.hasPasscode {
             lock()
         }
     }
 
-    /// App went to the background - remember when.
+    // App went to the background - remember when.
     func appDidEnterBackground() {
         backgroundDate = Date()
     }
 
-    /// App came back - lock again if the timeout has passed.
+    // App came back - lock again if the timeout has passed.
     func appDidBecomeActive() {
         guard settings.faceIDEnabled, PasscodeStore.hasPasscode, !isLocked, let backgroundDate else { return }
         let seconds = Int(Date().timeIntervalSince(backgroundDate))
@@ -92,7 +92,7 @@ final class SecurityViewModel: ObservableObject {
         faceIDFailed = false
     }
 
-    // MARK: Face ID
+// Face ID
 
     func tryFaceID() async {
         guard screen != .lockedOut else { return }
@@ -115,7 +115,7 @@ final class SecurityViewModel: ObservableObject {
         }
     }
 
-    // MARK: Passcode keypad
+// Passcode keypad
 
     func tapDigit(_ digit: String) {
         guard screen == .passcode, enteredCode.count < passcodeLength else { return }
@@ -161,15 +161,15 @@ final class SecurityViewModel: ObservableObject {
         }
     }
 
-    /// 0...1 for the red countdown bar.
+    // 0...1 for the red countdown bar.
     var lockoutProgress: Double {
         guard lockoutTotalSeconds > 0 else { return 0 }
         return Double(lockoutSecondsLeft) / Double(lockoutTotalSeconds)
     }
 
-    // MARK: Settings actions
+// Settings actions
 
-    /// Face ID switch in Profile. Checks Face ID first, then asks for a passcode if there is none.
+    // Face ID switch in Profile. Checks Face ID first, then asks for a passcode if there is none.
     func setFaceIDEnabled(_ enabled: Bool) async {
         if !enabled {
             settings.faceIDEnabled = false
@@ -189,7 +189,7 @@ final class SecurityViewModel: ObservableObject {
         }
     }
 
-    /// Saves a new passcode from the setup sheet. Returns an error message or nil when OK.
+    // Saves a new passcode from the setup sheet. Returns an error message or nil when OK.
     func savePasscode(_ code: String, confirm: String) -> String? {
         guard Validator.isValidPasscode(code) else {
             return "Use 6 digits that are not all the same or in order."
@@ -200,14 +200,14 @@ final class SecurityViewModel: ObservableObject {
         return nil
     }
 
-    /// "Reset Face ID for SmartShopper" - turns the lock off and removes the passcode.
+    // "Reset Face ID for SmartShopper" - turns the lock off and removes the passcode.
     func resetSecurity() {
         settings.faceIDEnabled = false
         PasscodeStore.remove()
         unlock()
     }
 
-    /// Used by "Cancel & Return to Sign In" and the lockout screen.
+    // Used by "Cancel & Return to Sign In" and the lockout screen.
     func signOutReset() {
         lockoutTask?.cancel()
         lockoutSecondsLeft = 0

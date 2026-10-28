@@ -17,16 +17,6 @@
         "title" : "Data Summary"
       }
     ],
-    "dataSourceCreated",
-    [
-      {
-        "createdDate" : "2026-10-28T06:30:16Z",
-        "event" : "dataSourceCreated",
-        "id" : "6CB7BA62-1014-44D1-8F54-41D9402A3365",
-        "subtitle" : "items_dataset.csv",
-        "title" : "Data Source Created"
-      }
-    ],
     "dataSourceTrainingStarted",
     [
       {
@@ -42,6 +32,16 @@
         "id" : "661A9443-3D84-4B9B-BBA3-504C15B9BF3E",
         "subtitle" : "ItemCategoryClassifier 2",
         "title" : "Used By"
+      }
+    ],
+    "dataSourceCreated",
+    [
+      {
+        "createdDate" : "2026-10-28T06:30:16Z",
+        "event" : "dataSourceCreated",
+        "id" : "6CB7BA62-1014-44D1-8F54-41D9402A3365",
+        "subtitle" : "items_dataset.csv",
+        "title" : "Data Source Created"
       }
     ]
   ],

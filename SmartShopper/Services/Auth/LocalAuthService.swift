@@ -1,10 +1,6 @@
 //
 //  LocalAuthService.swift
 //  SmartShopper
-//
-//  DEMO MODE ONLY. Used when Firebase is not set up yet (no GoogleService-Info.plist)
-//  and inside unit tests. Accounts are kept in UserDefaults on this device only.
-//
 
 import Foundation
 
@@ -48,7 +44,8 @@ final class LocalAuthService: AuthServiceProtocol {
     }
 
     func sendPasswordReset(email: String) async throws {
-        // Nothing to send in demo mode - just pretend it worked.
+        
+// Nothing to send in demo mode - just pretend it worked.
     }
 
     func signOut() throws {

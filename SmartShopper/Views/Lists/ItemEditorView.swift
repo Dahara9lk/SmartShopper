@@ -2,7 +2,7 @@
 //  ItemEditorView.swift
 //  SmartShopper
 //
-//  Figma S5 "Item Detail": name, quick chips, quantity stepper, unit, category
+//  "Item Detail": name, quick chips, quantity stepper, unit, category
 //  (pre-filled by the on-device Core ML model), store preference, destination list, note.
 //
 
@@ -70,7 +70,7 @@ struct ItemEditorView: View {
         dismiss()
     }
 
-    // MARK: Parts
+    // Parts
 
     private var nameField: some View {
         HStack(spacing: 10) {

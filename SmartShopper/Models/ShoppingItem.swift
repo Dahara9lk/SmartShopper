@@ -1,13 +1,10 @@
 //
 //  ShoppingItem.swift
 //  SmartShopper
-//
-//  One item on a shopping list. Saved in Firestore at households/{id}/items/{itemId}.
-//
 
 import Foundation
 
-/// Unit picker on the Add Item screen (Liters / Units / kg / Packs).
+
 enum MeasureUnit: String, Codable, CaseIterable, Identifiable {
     case units
     case liters
@@ -41,17 +38,17 @@ struct ShoppingItem: Identifiable, Codable, Equatable, Hashable {
     var quantity: Int = 1
     var unit: MeasureUnit = .units
     var category: ItemCategory = .pantry
-    /// How sure the Core ML model was (0...1). 0 means the user picked it by hand.
+// How sure the Core ML model 0 means the user picked it by hand.
     var categoryConfidence: Double = 0
-    /// Estimated price for the running total.
+// Estimated price for the running total.
     var price: Double = 0
     var note: String = ""
     var storePreference: String = "Nearby"
-    /// true = shared Family list, false = my own list.
+// true = shared Family list, false = my own list.
     var isFamily: Bool = false
     var ownerId: String
     var addedByName: String
-    /// Family member this item is for ("You", "Mom"...). Optional.
+//Family member this item is for ("You", "Mom"...)
     var assignedTo: String? = nil
     var isUrgent: Bool = false
     var isPurchased: Bool = false
@@ -59,7 +56,7 @@ struct ShoppingItem: Identifiable, Codable, Equatable, Hashable {
     var createdAt: Date = Date()
     var updatedAt: Date = Date()
 
-    /// "2 L", "1 unit", "3 pk"
+// "2 L", "1 unit", "3 pk"
     var quantityText: String {
         if unit == .units {
             return quantity == 1 ? "1 unit" : "\(quantity) units"
@@ -67,9 +64,9 @@ struct ShoppingItem: Identifiable, Codable, Equatable, Hashable {
         return "\(quantity) \(unit.shortName)"
     }
 
-    /// "Whole Milk — 2 L"
+// "Whole Milk — 2 L"
     var titleWithQuantity: String { "\(name) — \(quantityText)" }
 
-    /// Price x quantity
+// Price x quantity
     var lineTotal: Double { price * Double(quantity) }
 }

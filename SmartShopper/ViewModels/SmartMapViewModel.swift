@@ -10,7 +10,7 @@
 //  4. StoreMatcher ranks them by how many remaining items they cover + distance.
 //  5. MKDirections draws the route and the detour time.
 //  6. GeofenceService watches the best shops and sends an alert when you get close.
-//
+
 
 import Foundation
 import Combine
@@ -22,10 +22,10 @@ final class SmartMapViewModel: ObservableObject {
 
     enum ScreenState: Equatable {
         case needsPermission      // first time - ask for location
-        case denied               // S14 Location Services Needed
-        case searching            // S15 Matching Shops Along Route
-        case results              // S27 map + store card
-        case noResults            // S17 No Stores Found Along Route
+        case denied               // Location Services Needed
+        case searching            // Matching Shops Along Route
+        case results              //  map + store card
+        case noResults            // No Stores Found Along Route
     }
 
     @Published private(set) var state: ScreenState = .needsPermission
@@ -33,14 +33,14 @@ final class SmartMapViewModel: ObservableObject {
     @Published var selectedStore: NearbyStore?
     @Published private(set) var route: MKRoute?
     @Published private(set) var detourMinutes: Int?
-    /// True when Apple Maps has no driving directions for this area (e.g. Sri Lanka).
-    /// We then show a straight-line estimate instead of "Calculating..." forever.
+    // True when Apple Maps has no driving directions for this area (e.g. Sri Lanka).
+    //  We then show a straight-line estimate instead of "Calculating..." forever.
     @Published private(set) var routeUnavailable = false
     @Published var cameraPosition: MapCameraPosition = .userLocation(fallback: MapDefaults.colombo)
     @Published var searchRadiusKm: Double = 5
     @Published private(set) var searchProgress: Double = 0
     @Published private(set) var searchStatus: [String: String] = [:]   // store type title -> "Matched"/"Scanning"/"Queued"
-    /// Optional "home / office" destination for along-route detours (Set Manual Route or City).
+    // Optional "home / office" destination for along-route detours (Set Manual Route or City).
     @Published private(set) var destination: MKMapItem?
     @Published var destinationText = ""
     @Published private(set) var unmatchedItems: [ShoppingItem] = []
@@ -66,7 +66,7 @@ final class SmartMapViewModel: ObservableObject {
         return stores.filter { $0.id != selectedStore.id }
     }
 
-    // MARK: Permission
+    // Permission
 
     func refreshPermissionState() {
         if location.isDenied {
@@ -86,9 +86,9 @@ final class SmartMapViewModel: ObservableObject {
         }
     }
 
-    // MARK: Search
+    // Search
 
-    /// Starts a new search for shops that match the remaining items.
+    // Starts a new search for shops that match the remaining items.
     func refresh(items: [ShoppingItem]) {
         refreshPermissionState()
         guard location.isAuthorized else { return }
@@ -137,13 +137,13 @@ final class SmartMapViewModel: ObservableObject {
         }
     }
 
-    /// "Expand Search Radius to 15 mi"
+    // "Expand Search Radius to 15 mi"
     func expandRadius(items: [ShoppingItem]) {
         searchRadiusKm = min(25, searchRadiusKm + 10)
         refresh(items: items)
     }
 
-    // MARK: Selecting a shop
+    // Selecting a shop
 
     func select(_ store: NearbyStore) async {
         selectedStore = store
@@ -169,7 +169,7 @@ final class SmartMapViewModel: ObservableObject {
 
     // MARK: Manual route
 
-    /// "Set Manual Route or City" / "Change Route or Enter Custom Address"
+    // "Set Manual Route or City" / "Change Route or Enter Custom Address"
     func setDestination(items: [ShoppingItem]) async {
         let text = destinationText.trimmingCharacters(in: .whitespaces)
         guard !text.isEmpty else {
@@ -192,12 +192,12 @@ final class SmartMapViewModel: ObservableObject {
         }
     }
 
-    /// Opens Apple Maps with turn-by-turn directions to the shop.
+    // Opens Apple Maps with turn-by-turn directions to the shop.
     func openInMaps(_ store: NearbyStore) {
         store.mapItem?.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
     }
 
-    /// "+3 min detour" text
+    // "+3 min detour" text
     var detourText: String {
         guard let detourMinutes else { return "Calculating..." }
         if routeUnavailable { return "~\(detourMinutes) min (estimate)" }
@@ -205,7 +205,7 @@ final class SmartMapViewModel: ObservableObject {
     }
 }
 
-/// Where the map starts before the user's real location is known: Colombo, Sri Lanka.
+// Where the map starts before the user's real location is known: Colombo, Sri Lanka.
 enum MapDefaults {
     static let colombo = MapCameraPosition.region(
         MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 6.9271, longitude: 79.8612),

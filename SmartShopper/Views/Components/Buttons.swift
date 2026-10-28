@@ -65,7 +65,7 @@ struct SecondaryButton: View {
     }
 }
 
-/// Black "Continue with Apple" button.
+// Black "Continue with Apple" button.
 struct DarkButton: View {
     let title: String
     var icon: String? = "apple.logo"

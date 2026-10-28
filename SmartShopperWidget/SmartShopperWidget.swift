@@ -1,15 +1,13 @@
 //
 //  SmartShopperWidget.swift
 //  SmartShopperWidget
-//
-//  Created by Dahara on 2026-10-27.
-//
+
 
 
 import WidgetKit
 import SwiftUI
 
-// MARK: - Data for the widget
+// Data for the widget
 
 struct ListEntry: TimelineEntry {
     let date: Date
@@ -18,19 +16,19 @@ struct ListEntry: TimelineEntry {
 
 struct ListProvider: TimelineProvider {
 
-    /// Grey "loading" version.
+    // Grey "loading" version.
     func placeholder(in context: Context) -> ListEntry {
         ListEntry(date: Date(), snapshot: .sample)
     }
 
-    /// Shown in the widget gallery.
+    // Shown in the widget gallery.
     func getSnapshot(in context: Context, completion: @escaping (ListEntry) -> Void) {
         let data = context.isPreview ? WidgetSnapshot.sample : WidgetStorage.load()
         completion(ListEntry(date: Date(), snapshot: data))
     }
 
-    /// The app reloads the widget every time the list changes.
-    /// This 30 minute refresh is just a backup.
+    // The app reloads the widget every time the list changes.
+    // This 30 minute refresh is just a backup.
     func getTimeline(in context: Context, completion: @escaping (Timeline<ListEntry>) -> Void) {
         let entry = ListEntry(date: Date(), snapshot: WidgetStorage.load())
         let nextRefresh = Calendar.current.date(byAdding: .minute, value: 30, to: Date()) ?? Date()
@@ -38,7 +36,7 @@ struct ListProvider: TimelineProvider {
     }
 }
 
-// MARK: - Colours (same green as the app, lighter in dark mode)
+// Colours (same green as the app, lighter in dark mode)
 
 extension Color {
     static let widgetGreen = Color(UIColor { traits in
@@ -48,7 +46,7 @@ extension Color {
     })
 }
 
-// MARK: - Views
+// Views
 
 struct SmartShopperWidgetView: View {
     let entry: ListEntry
@@ -173,7 +171,7 @@ struct SmartShopperWidgetView: View {
         Label("\(data.itemsLeft) items to buy", systemImage: "cart.fill")
     }
 
-    /// What VoiceOver reads for the whole widget.
+    // What VoiceOver reads for the whole widget.
     private var accessibilitySummary: String {
         var text = "SmartShopper. \(data.itemsLeft) items left."
         if !data.nextItems.isEmpty { text += " Next: \(data.nextItems.joined(separator: ", "))." }
@@ -182,7 +180,7 @@ struct SmartShopperWidgetView: View {
     }
 }
 
-// MARK: - The widget
+// The widget
 
 struct SmartShopperWidget: Widget {
     let kind = "SmartShopperWidget"

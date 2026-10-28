@@ -2,9 +2,9 @@
 //  InStoreModeView.swift
 //  SmartShopper
 //
-//  Figma S12 "In-Store Shopping Mode": one item at a time in aisle order,
+//  "In-Store Shopping Mode": one item at a time in aisle order,
 //  Put in Basket / Skip, upcoming aisle waypoints, Store Path Radar,
-//  basket total and Finish Shopping Trip -> Trip Summary (S28).
+//  basket total and Finish Shopping Trip -> Trip Summary.
 //
 
 import SwiftUI
@@ -75,7 +75,7 @@ struct InStoreModeView: View {
         }
     }
 
-    // MARK: Parts
+    // Parts
 
     private var statusStrip: some View {
         HStack {
@@ -271,7 +271,7 @@ struct InStoreModeView: View {
         .cardStyle()
     }
 
-    /// Figma "Store Path Radar": Entrance -> aisles -> Checkout with a dot where you are.
+    // Figma "Store Path Radar": Entrance -> aisles -> Checkout with a dot where you are.
     private var radarCard: some View {
         let stops = viewModel.pathStops
         let currentIndex = viewModel.currentStopIndex

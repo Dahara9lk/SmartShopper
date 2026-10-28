@@ -3,14 +3,14 @@
 //  SmartShopper
 //
 //  The app lock screens:
-//    S9  Face ID for SmartShopper (prompt card)
-//    S7  Face ID Not Recognized + 6-digit passcode keypad
-//    S24 SmartShopper Disabled (lockout countdown)
+//  Face ID for SmartShopper (prompt card)
+//  Face ID Not Recognized + 6-digit passcode keypad
+//  SmartShopper Disabled (lockout countdown)
 //
 
 import SwiftUI
 
-/// Picks the right lock screen.
+// Picks the right lock screen.
 struct LockContainerView: View {
     @EnvironmentObject private var security: SecurityViewModel
     @EnvironmentObject private var store: AppDataStore
@@ -31,7 +31,7 @@ struct LockContainerView: View {
     }
 }
 
-// MARK: - S9 Face ID prompt
+// Face ID prompt
 
 struct FaceIDPromptView: View {
     @EnvironmentObject private var security: SecurityViewModel
@@ -109,7 +109,7 @@ struct FaceIDPromptView: View {
     }
 }
 
-// MARK: - S7 Passcode
+// Passcode
 
 struct PasscodeView: View {
     @EnvironmentObject private var security: SecurityViewModel
@@ -193,8 +193,7 @@ struct PasscodeView: View {
         .frame(maxWidth: 480)
     }
 }
-
-/// ●●●○○○
+// pass code dotes
 struct PasscodeDots: View {
     let count: Int
     let total: Int
@@ -213,7 +212,7 @@ struct PasscodeDots: View {
     }
 }
 
-/// 3 x 4 phone keypad.
+// 3 x 4 phone keypad.
 struct NumberKeypad: View {
     let onDigit: (String) -> Void
     let onDelete: () -> Void
@@ -277,7 +276,7 @@ struct NumberKeypad: View {
     }
 }
 
-// MARK: - S24 Lockout
+// Lockout
 
 struct LockoutView: View {
     @EnvironmentObject private var security: SecurityViewModel
@@ -374,7 +373,7 @@ struct LockoutView: View {
     }
 }
 
-// MARK: - Passcode setup sheet (after switching Face ID on)
+// Passcode setup sheet (after switching Face ID on)
 
 struct PasscodeSetupView: View {
     @EnvironmentObject private var security: SecurityViewModel

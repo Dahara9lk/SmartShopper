@@ -1,10 +1,6 @@
 //
 //  ItemCategory.swift
 //  SmartShopper
-//
-//  The 8 shop categories. The Core ML model predicts one of these
-//  (the raw values MUST match the labels in ItemCategoryClassifier.mlmodel).
-//
 
 import SwiftUI
 
@@ -20,7 +16,6 @@ enum ItemCategory: String, Codable, CaseIterable, Identifiable {
 
     var id: String { rawValue }
 
-    /// Name shown on badges and filter chips.
     var title: String {
         switch self {
         case .produce: return "Produce"
@@ -34,7 +29,6 @@ enum ItemCategory: String, Codable, CaseIterable, Identifiable {
         }
     }
 
-    /// SF Symbol for the category.
     var icon: String {
         switch self {
         case .produce: return "leaf.fill"
@@ -48,7 +42,6 @@ enum ItemCategory: String, Codable, CaseIterable, Identifiable {
         }
     }
 
-    /// Badge colour. System colours already adapt to dark mode.
     var color: Color {
         switch self {
         case .produce: return .green
@@ -62,7 +55,6 @@ enum ItemCategory: String, Codable, CaseIterable, Identifiable {
         }
     }
 
-    /// Simple aisle number used to sort items in In-Store Mode.
     var aisle: Int {
         switch self {
         case .produce: return 1
@@ -76,10 +68,8 @@ enum ItemCategory: String, Codable, CaseIterable, Identifiable {
         }
     }
 
-    /// "Aisle 3 • Dairy"
     var aisleText: String { "Aisle \(aisle) • \(title)" }
 
-    /// Which kinds of shop sell this category. Used by the Smart Map matching.
     var storeTypes: [StoreType] {
         switch self {
         case .produce, .dairy, .pantry, .household: return [.supermarket]
@@ -91,7 +81,6 @@ enum ItemCategory: String, Codable, CaseIterable, Identifiable {
     }
 }
 
-/// Kinds of shop we search for with MapKit.
 enum StoreType: String, CaseIterable, Identifiable {
     case supermarket
     case bakery
@@ -100,7 +89,6 @@ enum StoreType: String, CaseIterable, Identifiable {
 
     var id: String { rawValue }
 
-    /// Text sent to MKLocalSearch.
     var searchQuery: String {
         switch self {
         case .supermarket: return "supermarket"

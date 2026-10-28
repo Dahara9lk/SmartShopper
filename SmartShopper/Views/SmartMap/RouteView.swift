@@ -2,7 +2,7 @@
 //  RouteView.swift
 //  SmartShopper
 //
-//  Figma S4: driving route to the shop with the next turn instruction.
+//  driving route to the shop with the next turn instruction.
 //  The route line, steps, distance and ETA come from MKDirections (real data).
 //  If Apple Maps has no directions for the area, we show distance + an estimate instead.
 //
@@ -19,8 +19,8 @@ struct RouteView: View {
     @State private var position: MapCameraPosition = .userLocation(followsHeading: true, fallback: MapDefaults.colombo)
     @State private var showInStore = false
 
-    /// Items from the CURRENT shopping list this shop can supply.
-    /// Worked out live, so it is right even if the list changed after the shop search.
+    // Items from the CURRENT shopping list this shop can supply.
+    // Worked out live, so it is right even if the list changed after the shop search.
     private var itemsForThisShop: [ShoppingItem] {
         StoreMatcher.matchedItems(for: store.type, in: data.allRemainingItems)
     }

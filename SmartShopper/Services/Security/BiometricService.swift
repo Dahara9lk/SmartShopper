@@ -3,11 +3,7 @@
 //  SmartShopper
 //
 //  Face ID / Touch ID using Apple's LocalAuthentication framework.
-//  The face data never leaves the Secure Enclave - the app only gets "yes" or "no".
-//
-//  Simulator: Features > Face ID > Enrolled, then
-//             Features > Face ID > Matching Face / Non-matching Face
-//
+
 
 import Foundation
 import LocalAuthentication
@@ -22,7 +18,7 @@ enum BiometricResult: Equatable {
 
 struct BiometricService {
 
-    /// "Face ID", "Touch ID" or "Biometrics"
+// "Face ID", "Touch ID" or "Biometrics"
     var biometryName: String {
         let context = LAContext()
         _ = context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
@@ -33,12 +29,12 @@ struct BiometricService {
         }
     }
 
-    /// true when the phone has Face ID set up.
+// true when the phone has Face ID set up.
     var isAvailable: Bool {
         LAContext().canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
     }
 
-    /// Shows the system Face ID prompt and waits for the result.
+// Shows the system Face ID prompt and waits for the result.
     func authenticate(reason: String) async -> BiometricResult {
         let context = LAContext()
         context.localizedFallbackTitle = "Use Passcode"

@@ -2,7 +2,7 @@
 //  HistoryViewModel.swift
 //  SmartShopper
 //
-//  Numbers for the History & Statistics screen (Figma S2).
+//  Numbers for the History & Statistics screen
 //  A plain struct: give it the trips, read the stats. Easy to unit test.
 //
 
@@ -33,22 +33,22 @@ struct HistoryStats {
 
     var averagePerTrip: Double { tripCount == 0 ? 0 : totalSpend / Double(tripCount) }
 
-    /// Average completion across trips, 0...1
+    // Average completion across trips, 0...1
     var averageCompletion: Double {
         guard !trips.isEmpty else { return 0 }
         return trips.reduce(0) { $0 + $1.completionRate } / Double(trips.count)
     }
 
-    /// Total minutes saved, shown as hours ("4.2 hrs").
+    // Total minutes saved, shown as hours ("4.2 hrs").
     var hoursSaved: Double { Double(trips.reduce(0) { $0 + $1.minutesSaved }) / 60 }
 
-    /// Trips in the last 30 days ("+4 this mo").
+    // Trips in the last 30 days ("+4 this mo").
     func tripsThisMonth(now: Date = Date()) -> Int {
         let start = Calendar.current.date(byAdding: .day, value: -30, to: now) ?? now
         return trips.filter { $0.date >= start }.count
     }
 
-    /// Trips per weekday, Monday first (for the Weekly Shopping Intensity chart).
+    // Trips per weekday, Monday first (for the Weekly Shopping Intensity chart).
     var tripsByWeekday: [DayCount] {
         let labels = ["M", "T", "W", "T", "F", "S", "S"]
         var counts = Array(repeating: 0, count: 7)
@@ -61,14 +61,14 @@ struct HistoryStats {
         return (0..<7).map { DayCount(id: $0 + 1, label: labels[$0], trips: counts[$0]) }
     }
 
-    /// Busiest day name ("Saturday").
+    // Busiest day name ("Saturday").
     var peakDay: String? {
         guard let best = tripsByWeekday.max(by: { $0.trips < $1.trips }), best.trips > 0 else { return nil }
         let names = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
         return names[best.id - 1]
     }
 
-    /// Category Distribution bar - biggest first.
+    // Category Distribution bar - biggest first.
     var categoryShares: [CategoryShare] {
         let all = trips.flatMap { $0.items }
         guard !all.isEmpty else { return [] }
@@ -80,7 +80,7 @@ struct HistoryStats {
         .sorted { $0.count > $1.count }
     }
 
-    /// Milestone card text.
+    // Milestone card text.
     var milestoneText: String? {
         guard tripCount >= 3 else { return nil }
         let percent = Int((averageCompletion * 100).rounded())

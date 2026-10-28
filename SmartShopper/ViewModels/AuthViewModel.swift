@@ -35,13 +35,14 @@ final class AuthViewModel: ObservableObject {
     // Status
     @Published var isLoading = false
     @Published var errorMessage: String?
-    /// Fields turn red only after the user tried to submit once.
+    
+    // Fields turn red only after the user tried to submit once.
     @Published var didTrySubmit = false
 
     private static let savedEmailKey = "faceid.login.email"
     private static let savedPasswordKey = "faceid.login.password"
 
-    // MARK: Validation (used to show red hints and enable the button)
+// Validation (used to show red hints and enable the button)
 
     var nameIsValid: Bool { Validator.isValidName(fullName) }
     var emailIsValid: Bool { Validator.isValidEmail(email) }
@@ -63,12 +64,12 @@ final class AuthViewModel: ObservableObject {
         emailIsValid && !password.isEmpty && !isLoading
     }
 
-    /// true when an earlier sign-in was saved for Face ID ("Fast Biometrics" card).
+    // true when an earlier sign-in was saved for Face ID ("Fast Biometrics" card).
     var hasSavedLogin: Bool {
         KeychainHelper.read(Self.savedEmailKey) != nil
     }
 
-    // MARK: Actions
+// Actions
 
     func createAccount(store: AppDataStore, security: SecurityViewModel, settings: SettingsStore) async {
         didTrySubmit = true
@@ -115,7 +116,7 @@ final class AuthViewModel: ObservableObject {
         isLoading = false
     }
 
-    /// "Face ID - Scan" on the Sign In screen: Face ID first, then the saved login.
+    // "Face ID ; Scan" on the Sign In screen: Face ID first, then the saved login.
     func signInWithFaceID(store: AppDataStore) async {
         guard let savedEmail = KeychainHelper.read(Self.savedEmailKey),
               let savedPassword = KeychainHelper.read(Self.savedPasswordKey) else {
@@ -149,7 +150,7 @@ final class AuthViewModel: ObservableObject {
         }
     }
 
-    // MARK: Helpers
+// Helpers
 
     private func saveLoginForFaceID(settings: SettingsStore) {
         guard settings.keepSignedInWithFaceID else { return }
@@ -157,7 +158,7 @@ final class AuthViewModel: ObservableObject {
         KeychainHelper.save(password, for: Self.savedPasswordKey)
     }
 
-    /// Removes the saved login (Profile > Reset Face ID).
+    // Removes the saved login (Profile > Reset Face ID).
     static func forgetSavedLogin() {
         KeychainHelper.delete(savedEmailKey)
         KeychainHelper.delete(savedPasswordKey)
@@ -168,7 +169,7 @@ final class AuthViewModel: ObservableObject {
         return parts.last.map(String.init) ?? "My"
     }
 
-    /// The first thing wrong with the form, shown as the error message.
+    // The first thing wrong with the form, shown as the error message.
     private func firstProblem() -> String {
         if !nameIsValid { return "Enter your full name." }
         if !emailIsValid { return "Enter a valid email address." }

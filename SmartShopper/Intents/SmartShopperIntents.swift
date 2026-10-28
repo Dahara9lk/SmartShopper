@@ -1,14 +1,6 @@
 //
 //  SmartShopperIntents.swift
 //  SmartShopper
-//
-//  App Intents = Siri and Shortcuts support.
-//    "Add an item to SmartShopper"     -> asks for the item name, Core ML picks the category
-//    "Show my SmartShopper list"       -> opens the Lists tab
-//    "Find shops with SmartShopper"    -> opens Smart Map
-//
-//  Test: run the app once, then open the Shortcuts app - the shortcuts appear under SmartShopper.
-//
 
 import AppIntents
 import Foundation

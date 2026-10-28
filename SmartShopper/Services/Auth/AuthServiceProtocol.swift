@@ -1,28 +1,25 @@
 //
 //  AuthServiceProtocol.swift
 //  SmartShopper
-//
-//  The app talks to "an auth service" through this protocol.
-//  FirebaseAuthService is the real one; LocalAuthService is a demo version
-//  used when GoogleService-Info.plist has not been added yet (and in tests).
-//
 
 import Foundation
 
 protocol AuthServiceProtocol: AnyObject {
-    /// The signed-in user's id, or nil when signed out.
+    
+// The signed-in user's id, or nil when signed out.
     var currentUserId: String? { get }
     var currentEmail: String? { get }
 
-    /// Creates an account and returns the new user id.
+// Creates an account and returns the new user id.
     func signUp(email: String, password: String) async throws -> String
-    /// Signs in and returns the user id.
+    
+// Signs in and returns the user id.
     func signIn(email: String, password: String) async throws -> String
     func sendPasswordReset(email: String) async throws
     func signOut() throws
 }
 
-/// Friendly error messages shown under the forms.
+//error messages shown under the forms.
 enum AuthError: LocalizedError {
     case emailInUse
     case invalidEmail
@@ -44,8 +41,9 @@ enum AuthError: LocalizedError {
         }
     }
 
-    /// Converts a Firebase Auth error code (NSError.code) into an AuthError.
-    /// Codes are from Firebase's AuthErrorCode list.
+// Converts a Firebase Auth error code (NSError.code) into an AuthError.
+// Codes are from Firebase's AuthErrorCode list.
+    
     static func fromFirebaseCode(_ code: Int, message: String) -> AuthError {
         switch code {
         case 17007: return .emailInUse

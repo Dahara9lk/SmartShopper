@@ -1,13 +1,11 @@
 //
 //  FormFields.swift
 //  SmartShopper
-//
-//  Text fields, segmented capsule picker and chips styled like the Figma forms.
-//
+
 
 import SwiftUI
 
-/// Label above a grey rounded field with an icon (Full Name, Email Address...).
+// Label above a grey rounded field with an icon (Full Name, Email Address...).
 struct LabeledField: View {
     let label: String
     let icon: String
@@ -107,7 +105,7 @@ struct LabeledField: View {
     }
 }
 
-/// White-pill-on-grey segmented control (Sign In / Create Account, New Circle / Invite Code).
+// White-pill-on-grey segmented control (Sign In / Create Account, New Circle / Invite Code).
 struct CapsuleSegment: View {
     let options: [String]
     @Binding var selection: Int
@@ -138,7 +136,7 @@ struct CapsuleSegment: View {
     }
 }
 
-/// Filter chip ("All (8)", "Groceries (5)") - selected one is filled green.
+// Filter chip ("All (8)", "Groceries (5)") - selected one is filled green.
 struct FilterChip: View {
     let title: String
     var icon: String? = nil
@@ -165,7 +163,7 @@ struct FilterChip: View {
     }
 }
 
-/// Small "Remaining to pick" chip with a tiny checkbox.
+// Small "Remaining to pick" chip with a tiny checkbox.
 struct ItemChip: View {
     let title: String
 
@@ -186,7 +184,7 @@ struct ItemChip: View {
     }
 }
 
-/// Simple wrapping layout so chips flow onto new lines (iOS 16+ Layout protocol).
+// Simple wrapping layout so chips flow onto new lines (iOS 16+ Layout protocol).
 struct FlowLayout: Layout {
     var spacing: CGFloat = 8
 

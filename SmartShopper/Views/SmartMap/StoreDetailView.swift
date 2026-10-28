@@ -2,7 +2,7 @@
 //  StoreDetailView.swift
 //  SmartShopper
 //
-//  Figma S25: one shop - header, contact, "SmartMatch In-Store" list with Mark Picked,
+//  one shop - header, contact, "SmartMatch In-Store" list with Mark Picked,
 //  items it doesn't have ("Remaining On Route"), mini map, Start Route Navigation.
 //
 
@@ -18,7 +18,7 @@ struct StoreDetailView: View {
     @State private var showRoute = false
     @AppStorage("savedStores") private var savedStoresText = ""
 
-    /// Live copy of the matched items (so "Mark Picked" updates straight away).
+    // Live copy of the matched items (so "Mark Picked" updates straight away).
     private var matched: [ShoppingItem] {
         let ids = Set(store.matchedItems.map(\.id))
         return data.items.filter { ids.contains($0.id) }
@@ -60,7 +60,7 @@ struct StoreDetailView: View {
         }
     }
 
-    // MARK: Parts
+    // Parts
 
     private var header: some View {
         VStack(alignment: .leading, spacing: 6) {

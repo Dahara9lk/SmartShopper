@@ -1,10 +1,6 @@
 //
 //  NetworkMonitor.swift
 //  SmartShopper
-//
-//  Watches the internet connection (Network framework) so the Home screen
-//  can show the offline state (Figma S21).
-//
 
 import Foundation
 import Network
@@ -29,7 +25,7 @@ final class NetworkMonitor: ObservableObject {
         monitor.start(queue: queue)
     }
 
-    /// "Tap to Test Connection" button - reads the current path again.
+// button reads the current path again "Tap to Test Connection"
     func testConnection() {
         isConnected = monitor.currentPath.status == .satisfied
         lastChecked = Date()

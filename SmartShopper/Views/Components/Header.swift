@@ -59,13 +59,13 @@ struct AppHeader: View {
     }
 }
 
-/// Circle with the person's first letter (instead of a photo).
+// Circle with the person's first letter (instead of a photo).
 struct AvatarCircle: View {
     let name: String
     var size: CGFloat = 36
     var showOnline = false
 
-    /// Same name -> same colour, so "Mom" is always the same colour.
+    // Same name -> same colour, so "Mom" is always the same colour.
     private var color: Color {
         let colors: [Color] = [.brandPrimary, .orange, .blue, .purple, .pink, .teal]
         let sum = name.unicodeScalars.reduce(0) { $0 + Int($1.value) }
@@ -92,7 +92,7 @@ struct AvatarCircle: View {
     }
 }
 
-/// Overlapping avatars "M D A".
+// Overlapping avatars "M D A".
 struct AvatarStack: View {
     let names: [String]
     var size: CGFloat = 26
@@ -108,7 +108,7 @@ struct AvatarStack: View {
     }
 }
 
-/// Sheet opened from the bell - recent family activity.
+// Sheet opened from the bell - recent family activity.
 struct ActivitySheet: View {
     @EnvironmentObject private var store: AppDataStore
     @Environment(\.dismiss) private var dismiss

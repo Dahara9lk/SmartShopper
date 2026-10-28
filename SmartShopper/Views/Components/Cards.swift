@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-/// Wraps any content in the white rounded Figma card.
+// Wraps any content in the white rounded Figma card.
 struct CardView<Content: View>: View {
     var padding: CGFloat = AppLayout.cardPadding
     @ViewBuilder let content: Content
@@ -26,7 +26,7 @@ struct CardView<Content: View>: View {
 }
 
 extension View {
-    /// Same look as CardView, as a modifier.
+    // Same look as CardView, as a modifier.
     func cardStyle(padding: CGFloat = AppLayout.cardPadding) -> some View {
         self
             .padding(padding)
@@ -40,7 +40,7 @@ extension View {
     }
 }
 
-/// "REMAINING ITEMS (5)              Swipe left for actions"
+// "REMAINING ITEMS (5)              Swipe left for actions"
 struct SectionHeader: View {
     let title: String
     var actionTitle: String? = nil
@@ -70,7 +70,7 @@ struct SectionHeader: View {
     }
 }
 
-/// Small rounded label like "Matched", "Step 1 of 2", "+4 this mo".
+// Small rounded label like "Matched", "Step 1 of 2", "+4 this mo".
 struct Pill: View {
     let text: String
     var color: Color = .brandPrimary
@@ -93,7 +93,7 @@ struct Pill: View {
     }
 }
 
-/// Category badge on item rows ("Dairy").
+// Category badge on item rows ("Dairy").
 struct CategoryBadge: View {
     let category: ItemCategory
 
@@ -109,7 +109,7 @@ struct CategoryBadge: View {
     }
 }
 
-/// Coloured circle with an SF Symbol inside (used on settings rows and cards).
+// Coloured circle with an SF Symbol inside (used on settings rows and cards).
 struct IconCircle: View {
     let systemName: String
     var color: Color = .brandPrimary
@@ -127,7 +127,7 @@ struct IconCircle: View {
     }
 }
 
-/// The green SmartShopper logo badge in the header.
+// The green SmartShopper logo badge in the header.
 struct AppLogoBadge: View {
     var size: CGFloat = 32
 
@@ -145,7 +145,7 @@ struct AppLogoBadge: View {
     }
 }
 
-/// Horizontal progress bar (capsule).
+// Horizontal progress bar (capsule).
 struct ProgressBar: View {
     let value: Double            // 0...1
     var color: Color = .brandPrimary
@@ -168,7 +168,7 @@ struct ProgressBar: View {
     }
 }
 
-/// Circular "38%" ring on the Home active list card.
+// Circular "38%" ring on the Home active list card.
 struct ProgressRing: View {
     let value: Double
     var size: CGFloat = 52
@@ -193,7 +193,7 @@ struct ProgressRing: View {
     }
 }
 
-/// Stat tile on History / Trip Summary ("24 Shopping Trips").
+// Stat tile on History / Trip Summary ("24 Shopping Trips").
 struct StatTile: View {
     let icon: String
     let value: String
@@ -233,7 +233,7 @@ struct StatTile: View {
     }
 }
 
-/// Empty / error state with a big icon (S6, S16, S17, S18).
+// Empty / error state with a big icon
 struct EmptyStateView: View {
     let icon: String
     let title: String
@@ -263,7 +263,7 @@ struct EmptyStateView: View {
     }
 }
 
-/// Light green info card with a shield icon ("On-Device Route Mapping").
+// Light green info card with a shield icon ("On-Device Route Mapping").
 struct InfoBanner: View {
     let icon: String
     let title: String

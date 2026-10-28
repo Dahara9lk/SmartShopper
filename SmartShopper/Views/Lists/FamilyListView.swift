@@ -2,7 +2,7 @@
 //  FamilyListView.swift
 //  SmartShopper
 //
-//  Figma S10 Family list (real-time with Firestore) and S16 "Shop Smarter Together"
+//  Family list (real-time with Firestore) and S16 "Shop Smarter Together"
 //  when nobody else has joined yet. Optional Face ID protection from Biometric settings.
 //
 
@@ -36,7 +36,7 @@ struct FamilyListView: View {
         }
     }
 
-    // MARK: Face ID protected
+//Face ID protected
 
     private var lockedCard: some View {
         VStack(spacing: 16) {
@@ -55,7 +55,7 @@ struct FamilyListView: View {
         .padding(24)
     }
 
-    // MARK: S10 list
+    // list
 
     private var familyList: some View {
         List {
@@ -192,7 +192,7 @@ struct FamilyListView: View {
         .cardStyle()
     }
 
-    /// "Add item to family list..." + Assign chips
+    // "Add item to family list..." + Assign chips
     private var addRow: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack(spacing: 10) {
@@ -342,7 +342,7 @@ struct FamilyInviteView: View {
     }
 }
 
-// MARK: - Invite sheet (ShareLink + QR code)
+// Invite sheet (ShareLink + QR code)
 
 struct InviteSheet: View {
     @EnvironmentObject private var store: AppDataStore

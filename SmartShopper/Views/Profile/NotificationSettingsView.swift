@@ -2,7 +2,7 @@
 //  NotificationSettingsView.swift
 //  SmartShopper
 //
-//  Figma S20 notification preferences, and S19 when notifications are switched off in iOS.
+// notification preferences, and S19 when notifications are switched off in iOS.
 //
 
 import SwiftUI
@@ -154,7 +154,7 @@ struct NotificationSettingsView: View {
     }
 }
 
-/// Figma S19 "Never Miss a Store Along Your Commute" - notifications are off.
+// "Never Miss a Store Along Your Commute" - notifications are off.
 struct NotificationsDeniedView: View {
     let status: UNAuthorizationStatus
     let onAllow: () -> Void

@@ -1,21 +1,17 @@
 //
 //  LocalDataService.swift
 //  SmartShopper
-//
-//  DEMO MODE backend. Works exactly like FirebaseDataService but keeps everything
-//  in a JSON blob in UserDefaults on this device. Used when Firebase is not
-//  configured yet, and by the unit tests (with a separate UserDefaults suite).
-//
 
 import Foundation
 
 final class LocalDataService: DataServiceProtocol {
 
-    /// Everything we store, saved as one JSON blob.
+// Everything we store, saved as one JSON blob.
     private struct Database: Codable {
         var profiles: [String: UserProfile] = [:]
         var households: [String: Household] = [:]
-        var items: [String: [ShoppingItem]] = [:]       // householdId -> items
+        var items: [String: [ShoppingItem]] = [:]
+// householdId -> items
         var trips: [String: [ShoppingTrip]] = [:]
         var activity: [String: [ActivityEvent]] = [:]
     }
@@ -42,7 +38,7 @@ final class LocalDataService: DataServiceProtocol {
         }
     }
 
-    /// Sends the latest data to whoever is listening.
+// Sends the latest data to whoever is listening.
     private func notify() {
         guard let id = listeningId, let onChange else { return }
         onChange(HouseholdSnapshot(household: database.households[id],
@@ -53,7 +49,7 @@ final class LocalDataService: DataServiceProtocol {
                                    isFromCache: false))
     }
 
-    // MARK: Profile
+    // Profile
 
     func loadProfile(userId: String) async throws -> UserProfile? {
         database.profiles[userId]
@@ -64,7 +60,7 @@ final class LocalDataService: DataServiceProtocol {
         persist()
     }
 
-    // MARK: Household
+    // Household
 
     func createHousehold(name: String, owner: FamilyMember) async throws -> Household {
         var organiser = owner
@@ -92,7 +88,7 @@ final class LocalDataService: DataServiceProtocol {
         return household
     }
 
-    // MARK: Listening
+    //Listening
 
     func startListening(householdId: String, onChange: @escaping (HouseholdSnapshot) -> Void) {
         listeningId = householdId
@@ -104,8 +100,6 @@ final class LocalDataService: DataServiceProtocol {
         listeningId = nil
         onChange = nil
     }
-
-    // MARK: Writes
 
     func saveItem(_ item: ShoppingItem, householdId: String) async throws {
         var list = database.items[householdId] ?? []

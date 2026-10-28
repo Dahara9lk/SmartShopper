@@ -1,11 +1,8 @@
 //
 //  LocationService.swift
 //  SmartShopper
-//
+
 //  Core Location wrapper: asks for permission and publishes the user's location.
-//
-//  Simulator: Features > Location > Custom Location... (or City Run / Freeway Drive)
-//
 
 import Foundation
 import CoreLocation
@@ -37,7 +34,7 @@ final class LocationService: NSObject, ObservableObject, CLLocationManagerDelega
         authorizationStatus == .denied || authorizationStatus == .restricted
     }
 
-    /// "Allowed While Using", "Always", "Denied"...
+// "Allowed While Using", "Always", "Denied"...
     var statusText: String {
         switch authorizationStatus {
         case .authorizedAlways: return "Always"
@@ -48,12 +45,12 @@ final class LocationService: NSObject, ObservableObject, CLLocationManagerDelega
         }
     }
 
-    /// Shows the iOS "Allow location?" popup.
+// Shows the iOS "Allow location?" popup.
     func requestPermission() {
         manager.requestWhenInUseAuthorization()
     }
 
-    /// Needed for store alerts while the app is closed.
+// Needed for store alerts while the app is closed.
     func requestAlwaysPermission() {
         manager.requestAlwaysAuthorization()
     }
@@ -67,7 +64,7 @@ final class LocationService: NSObject, ObservableObject, CLLocationManagerDelega
         manager.stopUpdatingLocation()
     }
 
-    /// Waits (up to ~5 seconds) for the first GPS fix.
+// Waits (up to ~5 seconds) for the first GPS fix.
     func waitForLocation() async -> CLLocation? {
         if let lastLocation { return lastLocation }
         startUpdating()
@@ -78,8 +75,9 @@ final class LocationService: NSObject, ObservableObject, CLLocationManagerDelega
         return lastLocation
     }
 
-    // MARK: CLLocationManagerDelegate
-    // Delegate calls are "nonisolated", so we hop back to the main actor to update the UI values.
+//CLLocationManagerDelegate
+    
+// Delegate calls are "nonisolated", so we hop back to the main actor to update the UI values.
 
     nonisolated func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         let status = manager.authorizationStatus
@@ -101,6 +99,6 @@ final class LocationService: NSObject, ObservableObject, CLLocationManagerDelega
     }
 
     nonisolated func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        // Errors such as "location unknown" are temporary - Core Location keeps trying.
+// Errors such as "location unknown" are temporary - Core Location keeps trying.
     }
 }

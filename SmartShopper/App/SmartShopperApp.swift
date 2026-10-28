@@ -1,16 +1,15 @@
 //
 //  SmartShopperApp.swift
 //  SmartShopper
-//
+
 //  App entry point (the only @main in the project).
-//
 
 import SwiftUI
 
 @main
 struct SmartShopperApp: App {
 
-    // Shared objects, created once in AppEnvironment and passed down to every view.
+   
     @StateObject private var settings: SettingsStore
     @StateObject private var store: AppDataStore
     @StateObject private var security: SecurityViewModel

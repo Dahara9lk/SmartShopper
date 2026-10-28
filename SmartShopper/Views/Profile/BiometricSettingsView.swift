@@ -2,7 +2,7 @@
 //  BiometricSettingsView.swift
 //  SmartShopper
 //
-//  Figma S8: Face ID permissions (unlock app, protect family lists, quick auth on commute),
+//  Face ID permissions (unlock app, protect family lists, quick auth on commute),
 //  lock timeout, change passcode, reset Face ID.
 //
 

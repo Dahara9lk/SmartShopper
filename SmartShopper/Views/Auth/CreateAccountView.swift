@@ -55,7 +55,7 @@ struct CreateAccountView: View {
         .padding(.top, 8)
     }
 
-    // MARK: Parts
+    // Parts
 
     private var header: some View {
         VStack(spacing: 8) {

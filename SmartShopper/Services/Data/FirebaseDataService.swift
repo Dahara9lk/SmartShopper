@@ -1,19 +1,9 @@
 //
 //  FirebaseDataService.swift
 //  SmartShopper
-//
+
 //  Cloud Firestore backend.
-//
-//  Database layout:
-//    users/{uid}                              -> UserProfile
-//    households/{householdId}                 -> Household (members + invite code)
-//    households/{householdId}/items/{id}      -> ShoppingItem
-//    households/{householdId}/trips/{id}      -> ShoppingTrip
-//    households/{householdId}/activity/{id}   -> ActivityEvent
-//
-//  Firestore keeps an offline cache on the phone, so writes work without internet
-//  and upload automatically when the connection comes back.
-//
+
 
 import Foundation
 import FirebaseFirestore
@@ -27,7 +17,7 @@ final class FirebaseDataService: DataServiceProtocol {
         db.collection("households").document(id)
     }
 
-    // MARK: Profile
+// MARK: Profile
 
     func loadProfile(userId: String) async throws -> UserProfile? {
         let snapshot = try await db.collection("users").document(userId).getDocument()
@@ -39,7 +29,7 @@ final class FirebaseDataService: DataServiceProtocol {
         try db.collection("users").document(profile.id).setData(from: profile)
     }
 
-    // MARK: Household
+// MARK: Household
 
     func createHousehold(name: String, owner: FamilyMember) async throws -> Household {
         let ref = db.collection("households").document()
@@ -71,7 +61,7 @@ final class FirebaseDataService: DataServiceProtocol {
         return household
     }
 
-    // MARK: Live listeners
+// MARK: Live listeners
 
     func startListening(householdId: String, onChange: @escaping (HouseholdSnapshot) -> Void) {
         stopListening()
@@ -83,7 +73,8 @@ final class FirebaseDataService: DataServiceProtocol {
             onChange(HouseholdSnapshot(household: household))
         }
 
-        // 2. Items - includeMetadataChanges lets us show "2 items pending cloud sync"
+        // 2. Items - includeMetadataChanges
+        
         let itemsListener = ref.collection("items")
             .addSnapshotListener(includeMetadataChanges: true) { snapshot, _ in
                 guard let snapshot else { return }

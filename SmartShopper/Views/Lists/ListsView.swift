@@ -3,9 +3,9 @@
 //  SmartShopper
 //
 //  Lists tab. A "My List | Family" switch at the top.
-//   My List  -> Figma S3 (items, filter chips, progress, purchased, Start Shopping Mode)
-//               or S6 (empty state with popular staples)
-//   Family   -> FamilyListView (S10 / S16)
+//   My List  -> (items, filter chips, progress, purchased, Start Shopping Mode)
+//               or (empty state with popular staples)
+//   Family   -> FamilyListView
 //
 
 import SwiftUI
@@ -57,7 +57,7 @@ struct ListsView: View {
         .onChange(of: router.openFamilyList) { _, _ in applyRouterRequest() }
     }
 
-    /// Home's "Family" quick action opens the Family list.
+    // Home's "Family" quick action opens the Family list.
     private func applyRouterRequest() {
         if router.openFamilyList {
             viewModel.mode = .family
@@ -65,7 +65,7 @@ struct ListsView: View {
         }
     }
 
-    // MARK: S3 My List
+    // My List
 
     private var myList: some View {
         List {
@@ -197,7 +197,7 @@ struct ListsView: View {
     }
 }
 
-/// Label with a tiny green dot instead of a full-size icon.
+// Label with a tiny green dot instead of a full-size icon.
 struct SmallDotLabelStyle: LabelStyle {
     func makeBody(configuration: Configuration) -> some View {
         HStack(spacing: 4) {
@@ -207,7 +207,7 @@ struct SmallDotLabelStyle: LabelStyle {
     }
 }
 
-// MARK: - S6 Empty list
+// Empty list
 
 struct EmptyListView: View {
     @ObservedObject var viewModel: ListsViewModel

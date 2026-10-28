@@ -7,16 +7,13 @@
 //   - family alerts when someone adds / checks off an item (AppDataStore)
 //   - weekly shopping recap every Sunday evening
 //   - "Send Test Notification" button in settings
-//
-//  These are local notifications created on the phone. (Remote APNs push needs a paid
-//  Apple Developer account, so the family alerts are raised by the Firestore listener instead.)
-//
+
 
 import Foundation
 import UserNotifications
 
 extension Notification.Name {
-    /// Posted when the user taps a store notification - MainTabView opens the Smart Map tab.
+// Posted when the user taps a store notification - MainTabView opens the Smart Map tab.
     static let openSmartMap = Notification.Name("openSmartMap")
 }
 
@@ -26,13 +23,13 @@ final class NotificationService: NSObject, UNUserNotificationCenterDelegate {
 
     private let center = UNUserNotificationCenter.current()
 
-    // Notification categories and buttons (shown when you long-press the banner)
+// Notification categories and buttons (shown when you long-press the banner)
     static let storeCategory = "STORE_ALERT"
     static let snoozeAction = "SNOOZE_10"
     static let routeAction = "SHOP_ROUTE"
     private static let weeklyRecapId = "weekly-recap"
 
-    /// Call once when the app starts.
+// Call once when the app starts.
     func configure() {
         center.delegate = self
         let snooze = UNNotificationAction(identifier: Self.snoozeAction, title: "Snooze 10m", options: [])
@@ -44,9 +41,9 @@ final class NotificationService: NSObject, UNUserNotificationCenterDelegate {
         center.setNotificationCategories([storeCategory])
     }
 
-    // MARK: Permission
+//Permission
 
-    /// Shows the iOS "Allow Notifications?" popup (only the first time).
+    // Shows the iOS "Allow Notifications?" popup (only the first time).
     @discardableResult
     func requestPermission() async -> Bool {
         do {
@@ -62,7 +59,7 @@ final class NotificationService: NSObject, UNUserNotificationCenterDelegate {
 
     // MARK: Sending
 
-    /// "GreenValley Grocer is 350 m away - 3 items on your list: Milk, Bread, Eggs"
+    // "GreenValley Grocer is 350 m away ; 3 items on your list: Milk, Bread, Eggs"
     func sendStoreAlert(storeName: String, itemNames: [String], storeId: String) {
         let content = UNMutableNotificationContent()
         content.title = "\(storeName) is nearby"
@@ -74,7 +71,7 @@ final class NotificationService: NSObject, UNUserNotificationCenterDelegate {
         send(content, id: "store-\(storeId)")
     }
 
-    /// "Mom added Oat Milk"
+    // "Mom added Oat Milk"
     func sendFamilyAlert(title: String, body: String) {
         let content = UNMutableNotificationContent()
         content.title = title
@@ -83,7 +80,7 @@ final class NotificationService: NSObject, UNUserNotificationCenterDelegate {
         send(content, id: UUID().uuidString)
     }
 
-    /// Button in Notification Settings - fires after 3 seconds so you can lock the simulator.
+    // Button in Notification Settings ;fires after 3 seconds so you can lock the simulator.
     func sendTestNotification() {
         let content = UNMutableNotificationContent()
         content.title = "SmartShopper test alert"
@@ -95,7 +92,7 @@ final class NotificationService: NSObject, UNUserNotificationCenterDelegate {
         center.add(UNNotificationRequest(identifier: "test-\(UUID().uuidString)", content: content, trigger: trigger))
     }
 
-    /// Weekly recap every Sunday at 6 PM (or removes it when switched off).
+    // Weekly recap every Sunday at 6 PM (or removes it when switched off).
     func scheduleWeeklyRecap(enabled: Bool) {
         center.removePendingNotificationRequests(withIdentifiers: [Self.weeklyRecapId])
         guard enabled else { return }
@@ -110,27 +107,30 @@ final class NotificationService: NSObject, UNUserNotificationCenterDelegate {
         center.add(UNNotificationRequest(identifier: Self.weeklyRecapId, content: content, trigger: trigger))
     }
 
-    /// Shows a notification straight away (1 second trigger).
+    // Shows a notification straight away (1 second trigger).
     private func send(_ content: UNMutableNotificationContent, id: String) {
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
         center.add(UNNotificationRequest(identifier: id, content: content, trigger: trigger))
     }
 
-    // MARK: UNUserNotificationCenterDelegate
+// UNUserNotificationCenterDelegate
 
-    /// Show banners even while the app is open.
+    // Show banners even while the app is open.
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification) async -> UNNotificationPresentationOptions {
         [.banner, .sound, .list]
     }
 
-    /// Called when the user taps the notification or one of its buttons.
+    // Called when the user taps the notification or one of its buttons.
+    
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse) async {
         let content = response.notification.request.content
         switch response.actionIdentifier {
         case Self.snoozeAction:
+            
             // Same alert again in 10 minutes
+            
             guard let copy = content.mutableCopy() as? UNMutableNotificationContent else { return }
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 600, repeats: false)
             try? await center.add(UNNotificationRequest(identifier: UUID().uuidString, content: copy, trigger: trigger))

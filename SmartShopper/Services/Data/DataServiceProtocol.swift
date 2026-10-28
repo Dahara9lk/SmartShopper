@@ -1,23 +1,21 @@
 //
 //  DataServiceProtocol.swift
 //  SmartShopper
-//
-//  Everything the app saves or loads goes through this protocol.
-//  FirebaseDataService = Cloud Firestore (real backend, real-time family sync).
-//  LocalDataService    = demo backend saved on the device (no Firebase needed).
-//
 
 import Foundation
 
-/// One update coming from the backend. A nil field means "this part did not change".
+// One update coming from the backend
+
 struct HouseholdSnapshot {
     var household: Household? = nil
     var items: [ShoppingItem]? = nil
     var trips: [ShoppingTrip]? = nil
     var activity: [ActivityEvent]? = nil
-    /// How many items are saved on the phone but not yet uploaded (offline).
+// How many items are saved on the phone but not yet uploaded (offline)
+    
     var pendingWrites: Int? = nil
-    /// true when Firestore answered from its offline cache.
+// true when Firestore answered from its offline cache.
+    
     var isFromCache: Bool? = nil
 }
 

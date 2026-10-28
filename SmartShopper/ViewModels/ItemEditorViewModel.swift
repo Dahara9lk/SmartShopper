@@ -2,7 +2,7 @@
 //  ItemEditorViewModel.swift
 //  SmartShopper
 //
-//  Add / edit an item (Figma S5). While the user types the name, the on-device
+//  Add / edit an item . While the user types the name, the on-device
 //  Core ML model suggests a category. The user can still pick another one by hand.
 //
 
@@ -22,9 +22,9 @@ final class ItemEditorViewModel: ObservableObject {
     @Published var isFamily = false
     @Published var isUrgent = false
     @Published var note = ""
-    /// Latest Core ML suggestion (shown as "Suggested by on-device AI 91%").
+    // Latest Core ML suggestion (shown as "Suggested by on-device AI 91%").
     @Published private(set) var prediction: CategoryPrediction?
-    /// Once the user taps a category chip we stop overwriting it.
+    // Once the user taps a category chip we stop overwriting it.
     @Published private(set) var categoryPickedByHand = false
 
     private let existing: ShoppingItem?
@@ -64,7 +64,7 @@ final class ItemEditorViewModel: ObservableObject {
         name = text
     }
 
-    /// Runs the Core ML model on the current name.
+    // Runs the Core ML model on the current name.
     private func updatePrediction() {
         prediction = classifier.predict(name)
         if let prediction, !categoryPickedByHand {
@@ -72,7 +72,7 @@ final class ItemEditorViewModel: ObservableObject {
         }
     }
 
-    /// Builds the item to save.
+    // Builds the item to save.
     func makeItem(ownerId: String, addedBy: String) -> ShoppingItem {
         let price = Double(priceText.replacingOccurrences(of: ",", with: ".")) ?? PriceGuide.estimate(for: category)
         var item = existing ?? ShoppingItem(name: "", ownerId: ownerId, addedByName: addedBy)

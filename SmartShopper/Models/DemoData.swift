@@ -1,10 +1,6 @@
 //
 //  DemoData.swift
 //  SmartShopper
-//
-//  Sample content: "Popular Household Staples" grid, quick-pick chips,
-//  and the "Load Demo History Data" button on the empty History screen.
-//
 
 import Foundation
 
@@ -17,7 +13,7 @@ struct Staple: Identifiable {
 
 enum DemoData {
 
-    /// Figma S6 "Popular Household Staples"
+   
     static let staples: [Staple] = [
         Staple(name: "Fresh Milk", detail: "Dairy • 1 L", category: .dairy),
         Staple(name: "Eggs", detail: "Farm Fresh • 10", category: .dairy),
@@ -27,10 +23,10 @@ enum DemoData {
         Staple(name: "Red Rice", detail: "Pantry • 1 kg", category: .pantry)
     ]
 
-    /// Figma S5 "Quick" chips on the Add Item screen
+   
     static let quickPicks = ["Fresh Milk", "Bread", "Eggs", "Bananas", "Dish Soap"]
 
-    /// 4 trips over the last 2 weeks for the History charts.
+    
     static func sampleTrips(userName: String) -> [ShoppingTrip] {
         let calendar = Calendar.current
         func daysAgo(_ days: Int, hour: Int) -> Date {
@@ -40,7 +36,7 @@ enum DemoData {
         func item(_ name: String, _ category: ItemCategory, _ price: Double, by: String? = nil) -> TripItem {
             TripItem(name: name, category: category, price: price, quantity: 1, addedByName: by ?? userName)
         }
-        // Sample trips at Sri Lankan shops, prices in rupees (LKR)
+       
         return [
             ShoppingTrip(storeName: "Keells Super", storeArea: "Union Place, Colombo 02",
                          date: daysAgo(1, hour: 17),

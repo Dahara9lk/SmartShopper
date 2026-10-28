@@ -1,9 +1,8 @@
 //
 //  FirebaseAuthService.swift
 //  SmartShopper
-//
 //  Real sign up / sign in using Firebase Authentication (email + password).
-//
+
 
 import Foundation
 import FirebaseAuth
@@ -43,7 +42,7 @@ final class FirebaseAuthService: AuthServiceProtocol {
         try Auth.auth().signOut()
     }
 
-    /// Turns a Firebase error into our friendly AuthError.
+// Turns a Firebase error into AuthError.
     private func convert(_ error: Error) -> AuthError {
         let nsError = error as NSError
         return AuthError.fromFirebaseCode(nsError.code, message: nsError.localizedDescription)

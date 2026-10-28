@@ -2,7 +2,7 @@
 //  HistoryView.swift
 //  SmartShopper
 //
-//  Figma S2 "Shopping History & Statistics" (stat tiles, weekly chart with Swift Charts,
+// "Shopping History & Statistics" (stat tiles, weekly chart with Swift Charts,
 //  category distribution, recent sessions, CSV export) and S18 empty state.
 //
 
@@ -49,7 +49,7 @@ struct HistoryView: View {
         }
     }
 
-    // MARK: Stat tiles
+    // Stat tiles
 
     private var statColumns: [GridItem] {
         Array(repeating: GridItem(.flexible(), spacing: 10), count: sizeClass == .regular ? 4 : 2)
@@ -68,7 +68,7 @@ struct HistoryView: View {
         }
     }
 
-    // MARK: Weekly chart (Swift Charts)
+    // Weekly chart (Swift Charts)
 
     private var weeklyChart: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -108,14 +108,14 @@ struct HistoryView: View {
         .cardStyle()
     }
 
-    /// "1" -> "M", "7" -> "S" for the chart's x axis.
+    // "1" -> "M", "7" -> "S" for the chart's x axis.
     static func dayLetter(_ raw: String?) -> String {
         let letters = ["M", "T", "W", "T", "F", "S", "S"]
         guard let raw, let index = Int(raw), index >= 1, index <= 7 else { return "" }
         return letters[index - 1]
     }
 
-    // MARK: Category distribution
+    // Category distribution
 
     private var categoryCard: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -157,7 +157,7 @@ struct HistoryView: View {
         .cardStyle()
     }
 
-    // MARK: Recent sessions
+    // Recent sessions
 
     private var recentSessions: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -227,7 +227,7 @@ struct HistoryView: View {
         .accessibilityElement(children: .combine)
     }
 
-    // MARK: S18 empty state
+    //  empty state
 
     private var emptyState: some View {
         VStack(spacing: AppLayout.sectionSpacing) {
@@ -299,7 +299,7 @@ struct HistoryView: View {
     }
 }
 
-/// "Log Past Receipt Manually"
+// "Log Past Receipt Manually"
 struct ManualReceiptSheet: View {
     @EnvironmentObject private var store: AppDataStore
     @Environment(\.dismiss) private var dismiss

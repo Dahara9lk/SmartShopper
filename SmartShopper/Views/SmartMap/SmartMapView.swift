@@ -3,12 +3,11 @@
 //  SmartShopper
 //
 //  Smart Map tab. A real MapKit map on top, and a panel underneath that changes with the state:
-//    S27 results   - best matched shop card + other stores on route
-//    S15 searching - "Matching Shops Along Route" progress
-//    S17 no stores - expand radius / change route
-//    S14 denied    - location permission needed
-//  On iPad the panel sits beside the map instead of below it.
-//
+//    results   - best matched shop card + other stores on route
+//    searching - "Matching Shops Along Route" progress
+//    no stores - expand radius / change route
+//    denied    - location permission needed
+
 
 import SwiftUI
 import MapKit
@@ -82,7 +81,7 @@ struct SmartMapView: View {
         }
     }
 
-    // MARK: Map
+    // Map
 
     private var mapArea: some View {
         ZStack(alignment: .topTrailing) {
@@ -143,7 +142,7 @@ struct SmartMapView: View {
         .accessibilityLabel(label)
     }
 
-    // MARK: Panel
+    // Panel
 
     @ViewBuilder
     private var panel: some View {
@@ -161,7 +160,7 @@ struct SmartMapView: View {
         }
     }
 
-    // MARK: S27 results
+    // Results
 
     @ViewBuilder
     private var resultsPanel: some View {
@@ -346,7 +345,7 @@ struct SmartMapView: View {
         .clipShape(RoundedRectangle(cornerRadius: AppLayout.cardRadius))
     }
 
-    // MARK: S15 searching
+    // Searching
 
     private var searchingCard: some View {
         VStack(alignment: .leading, spacing: 14) {
@@ -414,7 +413,7 @@ struct SmartMapView: View {
         .cardStyle()
     }
 
-    // MARK: S17 no results
+    // no results
 
     private var noResultsCard: some View {
         VStack(spacing: 16) {
@@ -460,7 +459,7 @@ struct SmartMapView: View {
     }
 }
 
-/// Map pin: green circle with the shop type icon; bigger when selected.
+// Map pin: green circle with the shop type icon; bigger when selected.
 struct StorePin: View {
     let type: StoreType
     let isSelected: Bool
@@ -478,7 +477,7 @@ struct StorePin: View {
     }
 }
 
-/// S14 Location Services Needed (also used before permission is asked).
+// Location Services Needed (also used before permission is asked).
 struct LocationPermissionCard: View {
     let isDenied: Bool
     @EnvironmentObject private var smartMap: SmartMapViewModel
@@ -545,7 +544,7 @@ struct LocationPermissionCard: View {
     }
 }
 
-/// "Set Manual Route or City" sheet - enter home / work / a city.
+// "Set Manual Route or City" sheet - enter home / work / a city.
 struct DestinationSheet: View {
     let items: [ShoppingItem]
     @EnvironmentObject private var smartMap: SmartMapViewModel

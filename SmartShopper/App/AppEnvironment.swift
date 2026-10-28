@@ -21,7 +21,7 @@ final class AppEnvironment {
     let isFirebaseConfigured: Bool
 
     private init() {
-        // 1. Firebase (only if the config file exists, otherwise FirebaseApp.configure() would crash)
+        // 1. Firebase
         if Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist") != nil {
             FirebaseApp.configure()
             isFirebaseConfigured = true

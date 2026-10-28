@@ -56,13 +56,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		0E8A82B43090A4E000E94A7E /* Exceptions for "SmartShopper" folder in "SmartShopper" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Resources/ItemCategoryClassifier.mlmodel,
-			);
-			target = 0E8A80CA3090511500E94A7E /* SmartShopper */;
-		};
 		0E8A82F63090E40A00E94A7E /* Exceptions for "SmartShopperWidget" folder in "SmartShopperWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -83,7 +76,6 @@
 		0E8A80CD3090511500E94A7E /* SmartShopper */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				0E8A82B43090A4E000E94A7E /* Exceptions for "SmartShopper" folder in "SmartShopper" target */,
 				0E8A82FD3090E92000E94A7E /* Exceptions for "SmartShopper" folder in "SmartShopperWidgetExtension" target */,
 			);
 			path = SmartShopper;

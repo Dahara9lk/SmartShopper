@@ -2,8 +2,6 @@
 //  AppTab.swift
 //  SmartShopper
 //
-//  The 5 main tabs from the Figma tab bar.
-//
 
 import Foundation
 
@@ -37,7 +35,6 @@ enum AppTab: String, CaseIterable, Identifiable, Hashable {
     }
 }
 
-/// Light / Dark / System choice in Profile settings.
 enum AppearanceMode: String, CaseIterable, Identifiable {
     case system
     case light

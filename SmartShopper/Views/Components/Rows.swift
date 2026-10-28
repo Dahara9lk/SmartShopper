@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-/// Round-cornered checkbox used on item rows.
+// Round-cornered checkbox used on item rows.
 struct CheckBox: View {
     let isChecked: Bool
 
@@ -27,8 +27,8 @@ struct CheckBox: View {
     }
 }
 
-/// One shopping item: checkbox, name, sub line, category badge.
-/// Purchased items are struck through (and the checkbox is ticked - not colour only).
+// One shopping item: checkbox, name, sub line, category badge.
+
 struct ItemRow: View {
     let item: ShoppingItem
     /// e.g. "Aisle 3 • Dairy" or "Added by Mom • 15m ago"
@@ -79,7 +79,7 @@ struct ItemRow: View {
     }
 }
 
-/// Groups settings rows in a white card with a caps title above.
+// Groups settings rows in a white card with a caps title above.
 struct SettingsGroup<Content: View>: View {
     let title: String
     var trailing: String? = nil
@@ -100,7 +100,7 @@ struct SettingsGroup<Content: View>: View {
     }
 }
 
-/// Icon + title + subtitle + switch.
+// Icon + title + subtitle + switch.
 struct SettingsToggleRow: View {
     let icon: String
     var iconColor: Color = .brandPrimary
@@ -130,7 +130,7 @@ struct SettingsToggleRow: View {
     }
 }
 
-/// Icon + title + value text + chevron. Tapping runs the action.
+// Icon + title + value text + chevron. Tapping runs the action.
 struct SettingsValueRow: View {
     let icon: String
     var iconColor: Color = .brandPrimary
@@ -189,7 +189,7 @@ struct SettingsValueRow: View {
     }
 }
 
-/// Thin line between rows inside a SettingsGroup.
+// Thin line between rows inside a SettingsGroup.
 struct RowDivider: View {
     var body: some View {
         Divider().overlay(Color.separatorLine).padding(.leading, 60)

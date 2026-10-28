@@ -25,12 +25,12 @@ final class SettingsStore: ObservableObject {
     /// Remember email + password in the Keychain so "Face ID Scan" can sign in.
     @Published var keepSignedInWithFaceID: Bool { didSet { defaults.set(keepSignedInWithFaceID, forKey: "keepSignedInWithFaceID") } }
 
-    // MARK: Location
-    /// Geofence radius around matched shops, in metres (200 / 500 / 1000 / 2500).
+// Location
+    // Geofence radius around matched shops, in metres (200 / 500 / 1000 / 2500).
     @Published var alertRadiusMeters: Int { didSet { defaults.set(alertRadiusMeters, forKey: "alertRadiusMeters") } }
     @Published var alongRouteDetection: Bool { didSet { defaults.set(alongRouteDetection, forKey: "alongRouteDetection") } }
 
-    // MARK: Notifications
+//Notifications
     @Published var storeAlerts: Bool { didSet { defaults.set(storeAlerts, forKey: "storeAlerts") } }
     @Published var familyItemAlerts: Bool { didSet { defaults.set(familyItemAlerts, forKey: "familyItemAlerts") } }
     @Published var familyCheckedAlerts: Bool { didSet { defaults.set(familyCheckedAlerts, forKey: "familyCheckedAlerts") } }
@@ -41,7 +41,7 @@ final class SettingsStore: ObservableObject {
     @Published var quietEndHour: Int { didSet { defaults.set(quietEndHour, forKey: "quietEndHour") } }
     @Published var urgentOverride: Bool { didSet { defaults.set(urgentOverride, forKey: "urgentOverride") } }
 
-    // MARK: Preferences
+// Preferences
     @Published var useMetric: Bool { didSet { defaults.set(useMetric, forKey: "useMetric") } }
 
     init(defaults: UserDefaults = .standard) {
@@ -87,7 +87,7 @@ final class SettingsStore: ObservableObject {
         useMetric = defaults.bool(forKey: "useMetric")
     }
 
-    /// Turns the appearance setting into the value SwiftUI's .preferredColorScheme needs.
+    // Turns the appearance setting into the value SwiftUI's .preferredColorScheme needs.
     var colorScheme: ColorScheme? {
         switch appearance {
         case .system: return nil
@@ -96,7 +96,7 @@ final class SettingsStore: ObservableObject {
         }
     }
 
-    /// "Immediately", "After 1 minute"...
+    // "Immediately", "After 1 minute"...
     static func lockTimeoutTitle(_ seconds: Int) -> String {
         switch seconds {
         case 0: return "Immediately"
@@ -106,7 +106,7 @@ final class SettingsStore: ObservableObject {
         }
     }
 
-    /// "10:00 PM"
+    // "10:00 PM"
     static func hourTitle(_ hour: Int) -> String {
         var components = DateComponents()
         components.hour = hour
@@ -114,7 +114,7 @@ final class SettingsStore: ObservableObject {
         return date.formatted(date: .omitted, time: .shortened)
     }
 
-    /// Should a notification be shown right now? (quiet hours + urgent override)
+    ///Should a notification be shown right now?
     func shouldDeliver(isUrgent: Bool, now: Date = Date()) -> Bool {
         let hour = Calendar.current.component(.hour, from: now)
         return QuietHours.shouldDeliver(hour: hour,
@@ -126,10 +126,10 @@ final class SettingsStore: ObservableObject {
     }
 }
 
-/// Quiet hours maths, kept separate so it can be unit tested.
+// Quiet hours maths, kept separate so it can be unit tested.
 enum QuietHours {
 
-    /// true when `hour` is inside the quiet window. Handles windows that cross midnight (22 -> 7).
+    // true when `hour` is inside the quiet window. Handles windows that cross midnight (22 -> 7).
     static func isQuiet(hour: Int, start: Int, end: Int) -> Bool {
         if start == end { return false }
         if start < end {

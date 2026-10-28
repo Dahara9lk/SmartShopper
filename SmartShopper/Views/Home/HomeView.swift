@@ -2,7 +2,7 @@
 //  HomeView.swift
 //  SmartShopper
 //
-//  Figma S11 Home dashboard:
+// Home dashboard:
 //   greeting, green "Shop Along Your Route" card (best matched shop from Smart Map),
 //   4 quick actions, active list progress, family activity feed, tip card.
 //  When offline, the S21 offline panel is shown at the top.
@@ -92,7 +92,7 @@ struct HomeView: View {
         }
     }
 
-    // MARK: Greeting
+    // Greeting
 
     private var greeting: some View {
         VStack(alignment: .leading, spacing: 2) {
@@ -107,7 +107,7 @@ struct HomeView: View {
         .padding(.top, 4)
     }
 
-    // MARK: Hero card
+    // Hero card
 
     @ViewBuilder
     private var heroCard: some View {
@@ -208,7 +208,7 @@ struct HomeView: View {
         }
     }
 
-    // MARK: Quick actions
+    // Quick actions
 
     private var quickActions: some View {
         HStack(spacing: 10) {
@@ -249,7 +249,7 @@ struct HomeView: View {
         .buttonStyle(PressableStyle())
     }
 
-    // MARK: Active list
+    // Active list
 
     private var activeListCard: some View {
         let progress = ListsViewModel.progress(myItems)
@@ -299,7 +299,7 @@ struct HomeView: View {
         .onTapGesture { router.open(.lists) }
     }
 
-    // MARK: Family activity
+    // Family activity
 
     private var familyActivityCard: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -355,7 +355,7 @@ struct HomeView: View {
         .cardStyle()
     }
 
-    // MARK: Tip
+    // Tip
 
     private var tipCard: some View {
         HStack(alignment: .top, spacing: 12) {

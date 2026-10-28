@@ -339,8 +339,8 @@ final class AppDataStore: ObservableObject {
     }
 }
 
-/// Very rough price guide so the running total has realistic numbers
-/// before the user types real prices.
+// Very rough price guide so the running total has realistic numbers
+//before the user types real prices.
 enum PriceGuide {
     static func estimate(for category: ItemCategory) -> Double {
         switch category {

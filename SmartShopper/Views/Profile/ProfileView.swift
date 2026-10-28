@@ -2,7 +2,7 @@
 //  ProfileView.swift
 //  SmartShopper
 //
-//  Figma S23 Profile / Settings: security, appearance (light / dark mode),
+//  Profile / Settings: security, appearance (light / dark mode),
 //  location & alert radius, family circle, notifications, preferences, sign out.
 //
 
@@ -76,7 +76,7 @@ struct ProfileView: View {
         }
     }
 
-    // MARK: Profile card
+    // Profile card
 
     private var profileCard: some View {
         HStack(spacing: 14) {
@@ -98,7 +98,7 @@ struct ProfileView: View {
         .padding(.top, 4)
     }
 
-    // MARK: Security
+    // Security
 
     private var securityGroup: some View {
         SettingsGroup(title: "Security & Access") {
@@ -131,7 +131,7 @@ struct ProfileView: View {
         }
     }
 
-    // MARK: Appearance (dark mode)
+    // Appearance (dark mode)
 
     private var appearanceGroup: some View {
         SettingsGroup(title: "Appearance") {
@@ -156,7 +156,7 @@ struct ProfileView: View {
         }
     }
 
-    // MARK: Location
+    // Location
 
     private var locationGroup: some View {
         SettingsGroup(title: "Location & Smart Route Matching", trailing: location.isAuthorized ? "Live" : nil) {
@@ -217,7 +217,7 @@ struct ProfileView: View {
         }
     }
 
-    // MARK: Family
+    // Family
 
     private var familyGroup: some View {
         SettingsGroup(title: "Family & Collaboration") {
@@ -248,7 +248,7 @@ struct ProfileView: View {
         }
     }
 
-    // MARK: Notifications
+    // Notifications
 
     private var notificationsGroup: some View {
         SettingsGroup(title: "Notifications") {
@@ -273,7 +273,7 @@ struct ProfileView: View {
         }
     }
 
-    // MARK: Preferences
+    // Preferences
 
     private var preferencesGroup: some View {
         SettingsGroup(title: "Preferences") {

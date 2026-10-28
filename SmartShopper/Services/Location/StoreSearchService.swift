@@ -11,7 +11,7 @@ import MapKit
 
 struct StoreSearchService {
 
-    /// Searches every store type needed by the list and returns the shops inside the radius.
+// Searches every store type needed by the list and returns the shops inside the radius.
     func searchStores(near center: CLLocation, radiusMeters: Double, types: [StoreType]) async -> [NearbyStore] {
         var found: [NearbyStore] = []
         var seenIds = Set<String>()
@@ -30,7 +30,9 @@ struct StoreSearchService {
                 let place = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
                 let distance = place.distance(from: center)
                 let name = mapItem.name ?? type.title
-                // id from name + rounded position, so the same shop found twice is kept once
+                
+    // id from name + rounded position, so the same shop found twice is kept once
+                
                 let id = "\(name)-\(Int(coordinate.latitude * 10_000))-\(Int(coordinate.longitude * 10_000))"
                 guard distance <= radiusMeters, !seenIds.contains(id) else { continue }
                 seenIds.insert(id)
@@ -47,7 +49,7 @@ struct StoreSearchService {
         return found
     }
 
-    /// Driving route from the user to a shop.
+// Driving route from the user to a shop.
     func route(from start: CLLocationCoordinate2D, to destination: MKMapItem) async -> MKRoute? {
         let request = MKDirections.Request()
         request.source = MKMapItem(placemark: MKPlacemark(coordinate: start))
@@ -56,8 +58,9 @@ struct StoreSearchService {
         let response = try? await MKDirections(request: request).calculate()
         return response?.routes.first
     }
-
-    /// Extra minutes a shop adds to a trip home: (you -> shop -> home) minus (you -> home).
+    
+// Extra minutes a shop adds to a trip home
+    
     func detourMinutes(from start: CLLocationCoordinate2D, via store: MKMapItem, to destination: MKMapItem) async -> Int? {
         guard let direct = await route(from: start, to: destination),
               let toStore = await route(from: start, to: store) else { return nil }
@@ -70,7 +73,8 @@ struct StoreSearchService {
         return max(0, Int((extra / 60).rounded()))
     }
 
-    /// Looks up a place the user typed (home, office, city) for "Set Manual Route".
+// Set Manual Route
+    
     func findPlace(_ text: String, near center: CLLocation?) async -> MKMapItem? {
         let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = text

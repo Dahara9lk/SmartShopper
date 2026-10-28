@@ -2,7 +2,7 @@
 //  TripSummaryView.swift
 //  SmartShopper
 //
-//  Figma S28 "Trip Summary & Receipt Breakdown": completed badge, stats,
+//"Trip Summary & Receipt Breakdown": completed badge, stats,
 //  itemised digital receipt, family cost split, share receipt.
 //  Opened after Finish Shopping Trip, or from a session in History.
 //
@@ -16,7 +16,7 @@ struct TripSummaryView: View {
 
     @EnvironmentObject private var router: AppRouter
 
-    /// Total per family member (who added each item).
+    // Total per family member (who added each item).
     private var splitByPerson: [(name: String, total: Double, items: [String])] {
         let names = Array(Set(trip.items.map(\.addedByName))).sorted()
         return names.map { name -> (name: String, total: Double, items: [String]) in

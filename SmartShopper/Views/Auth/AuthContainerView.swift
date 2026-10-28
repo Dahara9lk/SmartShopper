@@ -45,7 +45,7 @@ struct AuthContainerView: View {
     }
 }
 
-/// Terms line under the forms.
+// Terms line under the forms.
 struct TermsText: View {
     var verb = "continuing"
 
@@ -61,7 +61,7 @@ struct TermsText: View {
     }
 }
 
-/// "—— OR SIGN UP WITH EMAIL ——"
+//  OR SIGN UP WITH EMAIL
 struct OrDivider: View {
     let text: String
 
@@ -77,7 +77,7 @@ struct OrDivider: View {
     }
 }
 
-/// Red error box under a form.
+// Red error box under a form.
 struct ErrorBanner: View {
     let message: String
 

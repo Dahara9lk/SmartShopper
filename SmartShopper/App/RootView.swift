@@ -60,7 +60,6 @@ struct RootView: View {
     }
 }
 
-/// Shown for a moment while we check if the user is already signed in.
 struct SplashView: View {
     var body: some View {
         VStack(spacing: 16) {

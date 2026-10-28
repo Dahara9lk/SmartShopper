@@ -7,8 +7,9 @@
 //  ItemCategoryClassifier.mlmodel is a Text Classifier trained with Apple's Create ML app
 //  on MLTraining/items_dataset.csv (item name -> shop category). Steps are in the README.
 //
-//  If the model file has not been added yet, a simple keyword matcher is used instead,
-//  so the app still works.
+//  HYBRID: well-known words ("milk", "panadol") are matched with simple keyword rules,
+//  and anything else ("gotukola", "airpods") is predicted by the Core ML model.
+//  If the model file is missing, the keyword matcher alone is used, so the app still works.
 //
 
 import Foundation
@@ -54,8 +55,16 @@ final class ItemClassifierService {
         let text = itemName.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         guard !text.isEmpty else { return nil }
 
-        // 1. Core ML model (when available)
+        // Hybrid approach:
+        // 1. Item contains a word we know for sure ("milk", "panadol") -> use the keyword rule.
+        let keywordGuess = KeywordClassifier.predict(text)
+        if !keywordGuess.isLowConfidence {
+            return keywordGuess
+        }
+
+        // 2. Unknown words ("gotukola", "airpods") -> ask the Core ML model.
         if let model {
+            // Scores for every category, e.g. ["dairy": 0.71, "pantry": 0.12, ...]
             let scores = model.predictedLabelHypotheses(for: text, maximumCount: ItemCategory.allCases.count)
             if let best = scores.max(by: { $0.value < $1.value }),
                let category = ItemCategory(rawValue: best.key) {
@@ -63,8 +72,8 @@ final class ItemClassifierService {
             }
         }
 
-        // 2. Backup: keyword matching
-        return KeywordClassifier.predict(text)
+        // 3. No model: best keyword guess (low confidence, so the UI asks the user to check it)
+        return keywordGuess
     }
 }
 
